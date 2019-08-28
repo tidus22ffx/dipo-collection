@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -56,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(Login login) {
                 if(login != null){
-                    Toast.makeText(getApplicationContext(), login.getName(), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
