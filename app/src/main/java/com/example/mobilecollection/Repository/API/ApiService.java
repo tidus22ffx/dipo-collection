@@ -1,6 +1,6 @@
-package com.example.mobilecollection.model;
+package com.example.mobilecollection.Repository.API;
 
-import javax.inject.Inject;
+import com.example.mobilecollection.Repository.Model.Login;
 
 import io.reactivex.Single;
 import retrofit2.Retrofit;

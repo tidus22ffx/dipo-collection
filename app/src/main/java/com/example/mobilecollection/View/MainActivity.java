@@ -1,12 +1,9 @@
-package com.example.mobilecollection.view;
+package com.example.mobilecollection.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobilecollection.R;
-import com.example.mobilecollection.model.Login;
-import com.example.mobilecollection.viewmodel.LoginViewModel;
+import com.example.mobilecollection.Repository.Model.Login;
+import com.example.mobilecollection.ViewModel.LoginViewModel;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,10 +1,6 @@
 package com.example.mobilecollection.di;
 
-import com.example.mobilecollection.model.Api;
-import com.example.mobilecollection.model.ApiService;
-import com.example.mobilecollection.model.Login;
-
-import javax.inject.Singleton;
+import com.example.mobilecollection.Repository.API.Api;
 
 import dagger.Module;
 import dagger.Provides;

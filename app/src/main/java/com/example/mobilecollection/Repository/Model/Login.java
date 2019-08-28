@@ -1,4 +1,4 @@
-package com.example.mobilecollection.model;
+package com.example.mobilecollection.Repository.Model;
 
 import com.google.gson.annotations.SerializedName;
 

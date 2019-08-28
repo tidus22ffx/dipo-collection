@@ -1,6 +1,6 @@
 package com.example.mobilecollection.di;
 
-import com.example.mobilecollection.model.ApiService;
+import com.example.mobilecollection.Repository.API.ApiService;
 
 import dagger.Component;
 

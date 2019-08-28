@@ -11,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home_dummy"></activity>
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".View.HomeActivity" />
+        <activity android:name=".View.DeliveredActivity" android:parentActivityName=".View.HomeActivity" />
+        <activity android:name=".View.PendingActivity" android:parentActivityName=".View.HomeActivity" />
+        <activity android:name=".View.SettingsActivity" android:parentActivityName=".View.HomeActivity" />
+        <activity android:name=".View.ToDoListActivity" android:parentActivityName=".View.HomeActivity" />
+        <activity android:name=".View.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

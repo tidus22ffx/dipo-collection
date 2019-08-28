@@ -1,10 +1,9 @@
-package com.example.mobilecollection.viewmodel;
-import android.util.Log;
+package com.example.mobilecollection.ViewModel;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import com.example.mobilecollection.model.ApiService;
-import com.example.mobilecollection.model.Login;
+import com.example.mobilecollection.Repository.API.ApiService;
+import com.example.mobilecollection.Repository.Model.Login;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
