@@ -1,6 +1,10 @@
 package com.example.mobilecollection.Repository.API;
 
 import com.example.mobilecollection.Repository.Model.Login;
+import com.example.mobilecollection.Repository.Model.TodoItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.Single;
 import retrofit2.Retrofit;
@@ -24,6 +28,9 @@ public class ApiService {
 
     public Single<Login> getLogin() {
         return api.login();
+    }
+    public Single<ArrayList<TodoItem>> getDeliveredList() {
+        return api.getDeliveredList();
     }
 
 }
