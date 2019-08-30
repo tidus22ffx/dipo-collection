@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DipoMigrationProject</string>
+    <string name="password_lama">Password Lama</string>
+    <string name="password_baru">Password Baru</string>
+    <string name="konfirmasi_password_baru">Konfirmasi Password Baru</string>
+    <string name="show_password">Tampilkan Password</string>
 </resources>

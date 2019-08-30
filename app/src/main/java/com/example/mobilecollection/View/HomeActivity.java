@@ -30,8 +30,8 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.Liste
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        Toolbar toolbar = findViewById(R.id.toolbar);
 
         toolbar.setTitle("DIPO");
         toolbar.setTitleTextColor(Color.WHITE);
@@ -77,6 +77,8 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.Liste
 
     private void gotoProfile() {
         Toast.makeText(this, "Profile Clicked ", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(HomeActivity.this, ChangePasswordActivity.class);
+        startActivity(intent);
     }
 
     @Override
