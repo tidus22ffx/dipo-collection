@@ -18,9 +18,10 @@
         android:layout_weight="1" >
 
         <ImageView
+            android:id="@+id/delivered_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_todo_item" />
+            android:src="@drawable/done_list" />
 
     </LinearLayout>
 
@@ -65,7 +66,7 @@
                 android:text="Nama Customer: " />
 
             <TextView
-                android:id="@+id/delivered_order_date"
+                android:id="@+id/delivered_customer_name"
                 android:layout_width="match_parent"
                 android:gravity="center_vertical"
                 style="@style/Text"
