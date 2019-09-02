@@ -36,8 +36,10 @@ public class DeliveredActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivered);
 
-        Toolbar toolbar = findViewById(R.id.delivered_toolbar);
-        toolbar.setTitle("DATA DELIVERED");
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        TextView textView = findViewById(R.id.toolbar_text);
+        textView.setText("Data Delivered");
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 

@@ -36,8 +36,10 @@ public class PendingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending);
 
-        Toolbar toolbar = findViewById(R.id.pending_toolbar);
-        toolbar.setTitle("DATA PENDING");
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        TextView textView = findViewById(R.id.toolbar_text);
+        textView.setText("Data Pending");
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
