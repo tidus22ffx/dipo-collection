@@ -1,12 +1,14 @@
 package com.example.mobilecollection.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -33,6 +35,12 @@ public class DeliveredActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivered);
+
+        Toolbar toolbar = findViewById(R.id.delivered_toolbar);
+        toolbar.setTitle("DATA DELIVERED");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+
         deliveredRecyclerView = findViewById(R.id.delivered_list);
         swipeRefreshLayout = findViewById(R.id.deliveredSwipeRefreshLayout);
         loading = findViewById(R.id.delivered_list_loading);

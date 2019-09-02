@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.mobilecollection.R;
 
@@ -14,10 +15,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
-        Toolbar toolbar = findViewById(R.id.toolbar_changePass);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        TextView textView = findViewById(R.id.toolbar_text);
 
-        toolbar.setTitle("Change Password");
+        textView.setText("Change Password");
         toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
         setSupportActionBar(toolbar);
     }
 }
