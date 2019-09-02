@@ -10,7 +10,7 @@ public class TodoItem {
     @SerializedName("contractNo")
     private String contractNo;
 
-    @SerializedName("namaCustomer")
+    @SerializedName("customerName")
     private String customerName;
 
     @SerializedName("orderDate")

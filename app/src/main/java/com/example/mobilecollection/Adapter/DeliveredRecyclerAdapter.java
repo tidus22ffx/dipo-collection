@@ -49,21 +49,21 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
     class DeliveredViewHolder extends RecyclerView.ViewHolder {
 
         private TextView contractNo;
-        private TextView customerName;
+        private TextView orderDate;
         private TextView plat;
         private ImageView imageView;
 
         public DeliveredViewHolder(@NonNull View itemView) {
             super(itemView);
             contractNo = itemView.findViewById(R.id.delivered_contract_no);
-            customerName = itemView.findViewById(R.id.delivered_customer_name);
+            orderDate = itemView.findViewById(R.id.delivered_order_date);
             plat = itemView.findViewById(R.id.delivered_plat);
             imageView = itemView.findViewById(R.id.delivered_image);
         }
 
         void bind(TodoItem todoItem){
             contractNo.setText(todoItem.getContractNo());
-            customerName.setText(todoItem.getCustomerName());
+            orderDate.setText(todoItem.getOrderDate());
             plat.setText(todoItem.getPlat());
             imageView.setImageResource(R.drawable.ic_checklist);
         }

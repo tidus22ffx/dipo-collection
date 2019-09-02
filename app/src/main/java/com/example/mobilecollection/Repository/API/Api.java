@@ -14,7 +14,4 @@ public interface Api {
 
     @GET(value = "todolist")
     Single<ArrayList<TodoItem>> getDeliveredList();
-
-    @GET(value = "todolist")
-    Single<ArrayList<TodoItem>> getPendingList();
 }
