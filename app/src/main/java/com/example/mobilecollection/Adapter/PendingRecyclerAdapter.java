@@ -11,49 +11,48 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
-import com.example.mobilecollection.ViewModel.DeliveredViewModel;
 
 import java.util.ArrayList;
 
-public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecyclerAdapter.DeliveredViewHolder> {
+public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecyclerAdapter.PendingViewHolder> {
 
-    private ArrayList<TodoItem> todoList = new ArrayList<>();
-    public DeliveredRecyclerAdapter(ArrayList<TodoItem> todoList){
-        this.todoList = todoList;
+    private ArrayList<TodoItem> pendingList = new ArrayList<>();
+    public PendingRecyclerAdapter(ArrayList<TodoItem> pendingList){
+        this.pendingList = pendingList;
     }
 
     public void updateList(ArrayList<TodoItem> newTodoItems){
-        todoList.clear();
-        todoList = newTodoItems;
+        pendingList.clear();
+        pendingList = newTodoItems;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public DeliveredViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.delivered_list_item, parent, false);
-        DeliveredViewHolder viewHolder = new DeliveredViewHolder(view);
+    public PendingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.delivered_list_item, parent, false);
+        PendingRecyclerAdapter.PendingViewHolder viewHolder = new PendingRecyclerAdapter.PendingViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DeliveredViewHolder holder, int position) {
-        holder.bind(todoList.get(position));
+    public void onBindViewHolder(@NonNull PendingViewHolder holder, int position) {
+        holder.bind(pendingList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return todoList.size();
+        return pendingList.size();
     }
 
-    class DeliveredViewHolder extends RecyclerView.ViewHolder {
+    class PendingViewHolder extends RecyclerView.ViewHolder {
 
         private TextView contractNo;
         private TextView customerName;
         private TextView plat;
         private ImageView imageView;
 
-        public DeliveredViewHolder(@NonNull View itemView) {
+        public PendingViewHolder(@NonNull View itemView) {
             super(itemView);
             contractNo = itemView.findViewById(R.id.delivered_contract_no);
             customerName = itemView.findViewById(R.id.delivered_customer_name);
@@ -65,7 +64,7 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
             contractNo.setText(todoItem.getContractNo());
             customerName.setText(todoItem.getCustomerName());
             plat.setText(todoItem.getPlat());
-            imageView.setImageResource(R.drawable.ic_checklist);
+            imageView.setImageResource(R.drawable.ic_pending_list);
         }
     }
 }
