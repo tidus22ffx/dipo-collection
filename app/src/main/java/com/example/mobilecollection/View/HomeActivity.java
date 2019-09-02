@@ -76,7 +76,6 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.Liste
     }
 
     private void gotoProfile() {
-        Toast.makeText(this, "Profile Clicked ", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(HomeActivity.this, ChangePasswordActivity.class);
         startActivity(intent);
     }
@@ -98,10 +97,5 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.Liste
         } else {
             Toast.makeText(this, "position "+position, Toast.LENGTH_SHORT).show();
         }
-//        Intent intent = new Intent(this, Amphibi_Deskripsi.class);
-//        Bundle bundle = new Bundle();
-//        bundle.putInt("position", position);
-//        intent.putExtras(bundle);
-//        startActivity(intent);
     }
 }
