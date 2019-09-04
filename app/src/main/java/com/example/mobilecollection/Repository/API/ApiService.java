@@ -33,5 +33,6 @@ public class ApiService {
         return api.getDeliveredList();
     }
     public Single<ArrayList<TodoItem>> getPendingList() { return api.getPendingList(); }
+    public Single<ArrayList<TodoItem>> getToDoList() { return api.getToDoList(); }
 
 }
