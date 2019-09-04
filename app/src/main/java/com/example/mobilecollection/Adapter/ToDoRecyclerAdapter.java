@@ -3,7 +3,10 @@ package com.example.mobilecollection.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -14,15 +17,19 @@ import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.View.ToDoListActivity;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
-public class ToDoRecyclerAdapter extends RecyclerView.Adapter<ToDoRecyclerAdapter.ToDoViewHolder> {
+public class ToDoRecyclerAdapter extends RecyclerView.Adapter<ToDoRecyclerAdapter.ToDoViewHolder> implements Filterable {
 
-    private ArrayList<TodoItem> todoList = new ArrayList<>();
+    private ArrayList<TodoItem> todoList;
+    private ArrayList<TodoItem> todoListOriginal;
     Listener mlistener;
 
     public ToDoRecyclerAdapter(ArrayList<TodoItem> todoList, Listener listener){
         this.todoList = todoList;
         this.mlistener = listener;
+        todoListOriginal = new ArrayList<>(todoList);
     }
 
     public void updateList(ArrayList<TodoItem> newTodoItems){
@@ -30,6 +37,39 @@ public class ToDoRecyclerAdapter extends RecyclerView.Adapter<ToDoRecyclerAdapte
         todoList = newTodoItems;
         notifyDataSetChanged();
     }
+
+    @Override
+    public Filter getFilter() {
+        return todoFilter;
+    }
+
+    private Filter todoFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            ArrayList<TodoItem> todoListFiltered = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                todoListFiltered.addAll(todoListOriginal);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (TodoItem item : todoListOriginal) {
+                    if (item.getContractNo().toLowerCase().contains(filterPattern)
+                            || item.getPlat().toLowerCase().contains(filterPattern)){
+                        todoListFiltered.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = todoListFiltered;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            updateList((ArrayList<TodoItem>) results.values);
+        }
+    };
 
     public interface Listener {
         void onClick(int position);

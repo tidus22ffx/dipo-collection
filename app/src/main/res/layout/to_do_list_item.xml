@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
-        android:layout_margin="5dp"
+        android:layout_marginTop="8dp"
         app:cardBackgroundColor="@android:color/white">
 
         <LinearLayout
@@ -47,7 +47,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="HOB Action"
                         style="@style/Text" />
 
@@ -73,7 +73,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="Penanganan Ke"
                         style="@style/Text"/>
 
@@ -99,7 +99,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="No. Kontrak"
                         style="@style/Text"/>
 
@@ -125,7 +125,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="Nama Customer"
                         style="@style/Text" />
 
@@ -151,7 +151,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="Alamat"
                         style="@style/Text" />
 
@@ -177,7 +177,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="Balance"
                         style="@style/Text" />
 
@@ -203,7 +203,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="Current Balance"
                         style="@style/Text" />
 
@@ -229,7 +229,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="PTP"
                         style="@style/Text" />
 
@@ -255,7 +255,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="No. Polisi"
                         style="@style/Text" />
 
@@ -281,7 +281,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".28"
+                        android:layout_weight="0.32"
                         android:text="Bucket"
                         style="@style/Text" />
 

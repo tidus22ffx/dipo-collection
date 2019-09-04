@@ -23,13 +23,22 @@
             android:background="#f0f0f0"
             android:padding="8dp">
 
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/to_do_search"
+                android:background="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/to_do_list_recycler"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/to_do_list_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="@+id/to_do_search"/>
 
             <ProgressBar
                 android:id="@+id/to_do_list_loading"

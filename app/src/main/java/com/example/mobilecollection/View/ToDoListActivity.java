@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.mobilecollection.Adapter.DeliveredRecyclerAdapter;
@@ -30,6 +31,7 @@ public class ToDoListActivity extends AppCompatActivity implements  ToDoRecycler
     ToDoViewModel toDoViewModel;
     ProgressBar loading;
     TextView errorMessage;
+    SearchView searchView;
 
     private ToDoRecyclerAdapter adapter =
             new ToDoRecyclerAdapter(new ArrayList<TodoItem>(), ToDoListActivity.this);
@@ -41,6 +43,8 @@ public class ToDoListActivity extends AppCompatActivity implements  ToDoRecycler
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         TextView textView = findViewById(R.id.toolbar_text);
+        searchView = findViewById(R.id.to_do_search);
+
         textView.setText("To Do List");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
         toolbar.setTitleTextColor(Color.WHITE);
@@ -62,7 +66,18 @@ public class ToDoListActivity extends AppCompatActivity implements  ToDoRecycler
                 toDoViewModel.refreshToDoList();
             }
         });
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
         observeViewModel();
     }
 
