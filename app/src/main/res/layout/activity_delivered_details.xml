@@ -17,193 +17,1110 @@
         android:layout_gravity="top"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:isScrollContainer="true"
-            android:orientation="vertical"
-            app:layout_constraintLeft_toLeftOf="@id/detail_container"
-            app:layout_constraintRight_toRightOf="@id/detail_container"
-            app:layout_constraintTop_toTopOf="@id/detail_container">
+            android:layout_height="match_parent" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:gravity="top"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:isScrollContainer="true"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="@id/detail_container"
+                app:layout_constraintRight_toRightOf="@id/detail_container"
+                app:layout_constraintTop_toTopOf="@id/detail_container">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    style="@style/Text"
-                    android:text="Prioritas" />
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Prioritas :" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:elevation="1dp"
+                        android:id="@+id/prioritas_spinner"
+                        android:background="@drawable/spinner_background"
+                        android:entries="@array/prioritas_arrays"
+                        android:prompt="@string/prioritas_prompt" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/save_prioritas_button"
+                        android:background="@drawable/button_transparent"
+                        style="@style/SmallButtonText"
+                        android:gravity="center"
+                        android:text="Save Prioritas"
+                        android:layout_marginTop="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/Text"
-                    android:text=":" />
+                    android:layout_marginVertical="4dp"
+                    android:orientation="horizontal">
 
-                <Spinner
-                    android:layout_width="0dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="HOB Action"
+                        style="@style/TextBold"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:layout_weight="2"
+                        android:id="@+id/delivered_hob_action"
+                        android:text="HOB Action" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    style="@style/Text"
-                    android:entries="@array/prioritas_arrays"
-                    android:prompt="@string/prioritas_prompt" />
+                    android:layout_marginVertical="4dp"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="No. Kontrak"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        style="@style/Text"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/delivered_no_kontrak"
+                        android:text="No Kontrak" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Customer"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        style="@style/Text"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/delivered_nama_customer"
+                        android:text="Nama" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Tgl Jatuh Tempo"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        style="@style/Text"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/delivered_jatuh_tempo"
+                        android:text="jatuh tempo" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Overdue Days"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_overdue"
+                        android:text="Overdue" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="OS Net Receivables"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/delivered_receivable"
+                        android:layout_weight="2"
+                        style="@style/Text"
+                        android:layout_marginLeft="8dp"
+                        android:text="receivable" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Total Period"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/delivered_total_period"
+                        android:layout_weight="2"
+                        style="@style/Text"
+                        android:text="total period" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="USL Paid"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:id="@+id/delivered_paid"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="2"
+                        android:text="paid" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Unit"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/delivered_unit"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:layout_weight="2"
+                        android:text="Unit" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Brand"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/delivered_brand"
+                        android:layout_weight="2"
+                        style="@style/Text"
+                        android:layout_marginLeft="8dp"
+                        android:text="brand" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Current Unit"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_current_unit"
+                        android:layout_weight="2"
+                        android:text="current unit" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Expired Date"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_expired_date"
+                        android:layout_weight="2"
+                        android:text="total period" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Current Status"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_status"
+                        android:layout_weight="2"
+                        android:text="status" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Jumlah Angsuran"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_jumlah_angsuran"
+                        android:layout_weight="2"
+                        android:text="jumlah angsuran" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Balance"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_balance"
+                        android:layout_weight="2"
+                        android:text="balance" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Group Bucket"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/delivered_bucket"
+                        style="@style/Text"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="2"
+                        android:text="bucket" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/delivered_alamat"
+                        style="@style/Text"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="2"
+                        android:text="alamat" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Telp"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_telp"
+                        android:layout_weight="2"
+                        android:text="telp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/delivered_mobile"
+                        android:layout_weight="2"
+                        android:text="mobile" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Current Balance"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_current_balance"
+                        android:layout_weight="2"
+                        android:text="current balance" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="PTP"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/delivered_ptp"
+                        style="@style/Text"
+                        android:layout_weight="2"
+                        android:text="PTP" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="PTP Date"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_ptp_date"
+                        android:layout_weight="2"
+                        android:text="ptp date" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="PTP Amount"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/delivered_ptp_amount"
+                        android:layout_weight="2"
+                        style="@style/Text"
+                        android:text="ptp amount" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Remark Admin Call"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/delivered_remark"
+                        style="@style/Text"
+                        android:layout_weight="2"
+                        android:text="remark" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat Perubahan"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_alamat_perubahan"
+                        android:layout_weight="2"
+                        android:text="alamat perubahan" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Telp Perubahan"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_telp_perubahan"
+                        android:layout_weight="2"
+                        android:text="telp perubahan" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Perubahan"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_mobile_perubahan"
+                        android:layout_weight="2"
+                        android:text="ptp date" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginVertical="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/TextBold"
+                        android:layout_height="wrap_content"
+                        android:text="No. Plat Kendaraan"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        style="@style/Text"
+                        android:id="@+id/delivered_plat"
+                        android:layout_weight="2"
+                        android:text="plat kendaraan" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Bertemu Dengan :*" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:id="@+id/bertemu_dengan"
+                        android:elevation="1dp"
+                        android:background="@drawable/spinner_background"
+                        android:entries="@array/prioritas_arrays"
+                        android:prompt="@string/prioritas_prompt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Status Alamat :*" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:elevation="1dp"
+                        android:id="@+id/status_alamat"
+                        android:background="@drawable/spinner_background"
+                        android:entries="@array/prioritas_arrays"
+                        android:prompt="@string/prioritas_prompt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Status HP :*" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:elevation="1dp"
+                        android:id="@+id/status_hp"
+                        android:background="@drawable/spinner_background"
+                        android:entries="@array/prioritas_arrays"
+                        android:prompt="@string/prioritas_prompt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Status Telp :*" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:elevation="1dp"
+                        android:id="@+id/status_telp"
+                        android:background="@drawable/spinner_background"
+                        android:entries="@array/prioritas_arrays"
+                        android:prompt="@string/prioritas_prompt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Follow-up Type :*" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:elevation="1dp"
+                        android:id="@+id/followup_type"
+                        android:background="@drawable/spinner_background"
+                        android:entries="@array/prioritas_arrays"
+                        android:prompt="@string/prioritas_prompt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Visit Result OVD :*" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Text"
+                        android:elevation="1dp"
+                        android:id="@+id/visit_result"
+                        android:background="@drawable/spinner_background"
+                        android:entries="@array/prioritas_arrays"
+                        android:prompt="@string/prioritas_prompt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Kronologis :*" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="6"
+                        android:inputType="textMultiLine"
+                        style="@style/Text"
+                        android:elevation="1dp"
+                        android:id="@+id/kronologis"
+                        android:background="@drawable/edittext_background" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Foto 1 :*" />
+
+                    <ImageView
+                        android:src="@drawable/icon_camera"
+                        android:layout_height="80dp"
+                        android:layout_width="80dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/foto1"
+                        android:background="@drawable/edittext_background"
+                        android:foregroundGravity="center"
+                        android:padding="24dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBold"
+                        android:text="Foto 2 :" />
+
+                    <ImageView
+                        android:src="@drawable/icon_camera"
+                        android:layout_height="80dp"
+                        android:layout_width="80dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/foto2"
+                        android:background="@drawable/edittext_background"
+                        android:foregroundGravity="center"
+                        android:padding="24dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:paddingVertical="20dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_transparent"
+                        style="@style/SmallButtonText"
+                        android:gravity="center"
+                        android:id="@+id/detail_save_button"
+                        android:text="SAVE"
+                        android:layout_margin="4dp"/>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:id="@+id/detail_submit_button"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_transparent"
+                        style="@style/SmallButtonText"
+                        android:gravity="center"
+                        android:text="SUBMIT"
+                        android:layout_margin="4dp"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    style="@style/Text"
-                    android:layout_height="wrap_content"
-                    android:text="HOB Action"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=":" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:id="@+id/delivered_hob_action"
-                    android:text="HOB Action" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    style="@style/Text"
-                    android:layout_height="wrap_content"
-                    android:text="No. Kontrak"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=":" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:id="@+id/delivered_no_kontrak"
-                    android:text="No Kontrak" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    style="@style/Text"
-                    android:layout_height="wrap_content"
-                    android:text="Nama Customer"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=":" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:id="@+id/delivered_nama_customer"
-                    android:text="Nama" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    style="@style/Text"
-                    android:layout_height="wrap_content"
-                    android:text="HOB Action"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=":" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="HOB Action" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    style="@style/Text"
-                    android:layout_height="wrap_content"
-                    android:text="HOB Action"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=":" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="HOB Action" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    style="@style/Text"
-                    android:layout_height="wrap_content"
-                    android:text="HOB Action"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=":" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="HOB Action" />
-            </LinearLayout>
-
-        </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

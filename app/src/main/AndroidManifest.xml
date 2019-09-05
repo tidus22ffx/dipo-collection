@@ -13,7 +13,7 @@
             android:name=".View.DeliveredDetailsActivity"
             android:parentActivityName=".View.DeliveredActivity" />
         <activity android:name=".View.ChangePasswordActivity" />
-        <activity android:name=".View.HomeActivity" />
+<!--        <activity android:name=".View.HomeActivity" />-->
         <activity
             android:name=".View.DeliveredActivity"
             android:parentActivityName=".View.HomeActivity" />
@@ -26,7 +26,7 @@
         <activity
             android:name=".View.ToDoListActivity"
             android:parentActivityName=".View.HomeActivity" />
-        <activity android:name=".View.MainActivity">
+        <activity android:name=".View.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
