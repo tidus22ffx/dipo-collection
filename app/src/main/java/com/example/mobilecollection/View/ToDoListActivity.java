@@ -11,6 +11,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -66,6 +68,16 @@ public class ToDoListActivity extends AppCompatActivity implements  ToDoRecycler
                 toDoViewModel.refreshToDoList();
             }
         });
+
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchView.setIconified(false);
+            }
+        });
+
+        observeViewModel();
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -74,11 +86,10 @@ public class ToDoListActivity extends AppCompatActivity implements  ToDoRecycler
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+                toDoViewModel.filterList(newText);
                 return false;
             }
         });
-        observeViewModel();
     }
 
     private void observeViewModel() {
