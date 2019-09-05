@@ -109,7 +109,7 @@ public class DeliveredActivity extends AppCompatActivity implements DeliveredRec
     @Override
     public void onClick(int position) {
         deliveredViewModel.setTodoDetail(position);
-        Intent intent = new Intent(this, TodoDetailsActivity.class);
+        Intent intent = new Intent(this, DeliveredDetailsActivity.class);
         startActivity(intent);
     }
 }

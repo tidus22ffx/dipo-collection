@@ -1,7 +1,5 @@
 package com.example.mobilecollection.Adapter;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
-import com.example.mobilecollection.View.HomeActivity;
-import com.example.mobilecollection.View.TodoDetailsActivity;
-import com.example.mobilecollection.ViewModel.DeliveredViewModel;
 
 import java.util.ArrayList;
 
