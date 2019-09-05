@@ -1,5 +1,7 @@
 package com.example.mobilecollection.Adapter;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,21 +13,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
+import com.example.mobilecollection.View.HomeActivity;
+import com.example.mobilecollection.View.TodoDetailsActivity;
 import com.example.mobilecollection.ViewModel.DeliveredViewModel;
 
 import java.util.ArrayList;
 
 public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecyclerAdapter.DeliveredViewHolder> {
-
+    private ClickListener onClickListener;
     private ArrayList<TodoItem> todoList = new ArrayList<>();
     public DeliveredRecyclerAdapter(ArrayList<TodoItem> todoList){
         this.todoList = todoList;
     }
 
-    public void updateList(ArrayList<TodoItem> newTodoItems){
+    public void updateList(ArrayList<TodoItem> newTodoItems, ClickListener onClick){
         todoList.clear();
         todoList = newTodoItems;
         notifyDataSetChanged();
+        onClickListener = onClick;
     }
 
     @NonNull
@@ -37,8 +42,18 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DeliveredViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DeliveredViewHolder holder, final int position) {
         holder.bind(todoList.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickListener.onClick(position);
+            }
+        });
+    }
+
+    public interface ClickListener {
+        void onClick(int position);
     }
 
     @Override
@@ -52,6 +67,11 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
         private TextView customerName;
         private TextView plat;
         private ImageView imageView;
+        private TodoItem todoItem;
+
+        public TodoItem getTodoItem() {
+            return todoItem;
+        }
 
         public DeliveredViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -66,6 +86,7 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
             customerName.setText(todoItem.getCustomerName());
             plat.setText(todoItem.getPlat());
             imageView.setImageResource(R.drawable.ic_checklist);
+            this.todoItem = todoItem;
         }
     }
 }

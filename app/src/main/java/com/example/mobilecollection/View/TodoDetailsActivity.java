@@ -1,10 +1,12 @@
-package com.example.mobilecollection;
+package com.example.mobilecollection.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class todo_details extends AppCompatActivity {
+import com.example.mobilecollection.R;
+
+public class TodoDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

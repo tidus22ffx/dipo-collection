@@ -20,6 +20,15 @@ public class DeliveredViewModel extends ViewModel {
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
+    MutableLiveData<TodoItem> todoDetail = new MutableLiveData<>();
+
+    public void setTodoDetail(int index){
+        todoDetail.setValue(todoList.getValue().get(index));
+    }
+
+    public MutableLiveData<TodoItem> getTodoDetail() {
+        return todoDetail;
+    }
 
     public MutableLiveData<ArrayList<TodoItem>> getTodoList() {
         return todoList;

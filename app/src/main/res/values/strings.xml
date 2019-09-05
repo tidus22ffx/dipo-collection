@@ -4,4 +4,12 @@
     <string name="password_baru">Password Baru</string>
     <string name="konfirmasi_password_baru">Konfirmasi Password Baru</string>
     <string name="show_password">Tampilkan Password</string>
+
+    <string name="prioritas_prompt">Pilih Prioritas</string>
+
+    <string-array name="prioritas_arrays">
+        <item>Tinggi</item>
+        <item>Normal</item>
+        <item>Rendah</item>
+    </string-array>
 </resources>

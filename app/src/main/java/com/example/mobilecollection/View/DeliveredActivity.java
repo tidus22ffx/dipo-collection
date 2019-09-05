@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ import com.example.mobilecollection.ViewModel.DeliveredViewModel;
 
 import java.util.ArrayList;
 
-public class DeliveredActivity extends AppCompatActivity {
+public class DeliveredActivity extends AppCompatActivity implements DeliveredRecyclerAdapter.ClickListener {
 
     RecyclerView deliveredRecyclerView;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -69,7 +70,7 @@ public class DeliveredActivity extends AppCompatActivity {
             @Override
             public void onChanged(ArrayList<TodoItem> todoItems) {
                 if(todoItems != null){
-                    adapter.updateList(todoItems);
+                    adapter.updateList(todoItems, DeliveredActivity.this);
                     deliveredRecyclerView.setVisibility(View.VISIBLE);
                 }
             }
@@ -103,5 +104,12 @@ public class DeliveredActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(int position) {
+        deliveredViewModel.setTodoDetail(position);
+        Intent intent = new Intent(this, TodoDetailsActivity.class);
+        startActivity(intent);
     }
 }
