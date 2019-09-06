@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class TodoItem {
 
+    private TodoItem todoItem;
+
     @SerializedName("id")
     private int id;
 
@@ -72,6 +74,10 @@ public class TodoItem {
 
     @SerializedName("prioritas")
     private String prioritas;
+
+    public TodoItem(TodoItem todoItem) {
+        this.todoItem = todoItem;
+    }
 
     public int getId() {
         return id;

@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".View.ToDoDetailsActivity"
+            android:parentActivityName=".View.ToDoListActivity" />
+        <activity
             android:name=".View.DeliveredDetailsActivity"
             android:parentActivityName=".View.DeliveredActivity" />
-        <activity android:name=".View.ChangePasswordActivity" />
+        <activity
+            android:name=".View.ChangePasswordActivity"
+            android:parentActivityName=".View.HomeActivity" />
 <!--        <activity android:name=".View.HomeActivity" />-->
         <activity
             android:name=".View.DeliveredActivity"
