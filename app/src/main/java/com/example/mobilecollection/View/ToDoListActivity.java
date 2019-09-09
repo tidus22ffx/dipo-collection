@@ -8,14 +8,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mobilecollection.Adapter.DeliveredRecyclerAdapter;
 import com.example.mobilecollection.Adapter.ToDoRecyclerAdapter;
@@ -135,6 +138,8 @@ public class ToDoListActivity extends AppCompatActivity implements  ToDoRecycler
 
     @Override
     public void onClick(int position) {
-
+        Intent intent = new Intent(this, ToDoDetailsActivity.class);
+        intent.putExtra("index", position+1);
+        startActivity(intent);
     }
 }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface Api {
     @GET(value = "login")
@@ -20,4 +21,7 @@ public interface Api {
 
     @GET(value = "todolist")
     Single<ArrayList<TodoItem>> getToDoList();
+
+    @GET(value = "todolist/{idDetail}")
+    Single<TodoItem> getTodoDetails(@Path("idDetail") int id);
 }

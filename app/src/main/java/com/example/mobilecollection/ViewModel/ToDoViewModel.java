@@ -19,6 +19,7 @@ public class ToDoViewModel extends ViewModel {
     ApiService service = new ApiService();
 
     MutableLiveData<ArrayList<TodoItem>> todoList = new MutableLiveData<>();
+    MutableLiveData<TodoItem> todoItemDetail = new MutableLiveData<>();
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
@@ -93,6 +94,33 @@ public class ToDoViewModel extends ViewModel {
                             }
                         })
         );
+    }
+
+    public void fetchDetail(int id) {
+        loading.setValue(true);
+        disposable.add(
+                service.getToDoDetails(id)
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeWith(new DisposableSingleObserver<TodoItem>() {
+                            @Override
+                            public void onSuccess(TodoItem value) {
+                                todoItemDetail.setValue(value);
+                                loading.setValue(false);
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                loading.setValue(false);
+                                isError.setValue(true);
+                                errorMessage.setValue(e.toString());
+                            }
+                        })
+        );
+    }
+
+    public MutableLiveData<TodoItem> getToDoDetail() {
+        return todoItemDetail;
     }
 
     @Override
