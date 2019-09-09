@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mobilecollection.Adapter.DeliveredRecyclerAdapter;
 import com.example.mobilecollection.R;
@@ -109,7 +110,12 @@ public class DeliveredActivity extends AppCompatActivity implements DeliveredRec
     @Override
     public void onClick(int position) {
         deliveredViewModel.setTodoDetail(position);
-        Intent intent = new Intent(this, DeliveredDetailsActivity.class);
-        startActivity(intent);
+        deliveredViewModel.getTodoDetail().observe(this, new Observer<TodoItem>() {
+            @Override
+            public void onChanged(TodoItem todoItem) {
+                Toast.makeText(getApplicationContext(), todoItem.getCustomerName(), Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 }
