@@ -108,14 +108,9 @@ public class DeliveredActivity extends AppCompatActivity implements DeliveredRec
     }
 
     @Override
-    public void onClick(int position) {
-        deliveredViewModel.setTodoDetail(position);
-        deliveredViewModel.getTodoDetail().observe(this, new Observer<TodoItem>() {
-            @Override
-            public void onChanged(TodoItem todoItem) {
-                Toast.makeText(getApplicationContext(), todoItem.getCustomerName(), Toast.LENGTH_LONG).show();
-
-            }
-        });
+    public void onClick(int id) {
+        Intent intent = new Intent(this, DeliveredDetailsActivity.class);
+        intent.putExtra("detailId", id);
+        startActivity(intent);
     }
 }

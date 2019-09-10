@@ -24,4 +24,8 @@ public interface Api {
 
     @GET(value = "todolist/{idDetail}")
     Single<TodoItem> getTodoDetails(@Path("idDetail") int id);
+
+    @GET(value = "todolist/{idDetail}")
+    Single<TodoItem> getDeliveredDetails(@Path("idDetail") int id);
+
 }
