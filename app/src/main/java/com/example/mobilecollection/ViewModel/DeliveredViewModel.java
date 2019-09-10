@@ -22,10 +22,6 @@ public class DeliveredViewModel extends ViewModel {
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
     MutableLiveData<TodoItem> todoDetail = new MutableLiveData<>();
 
-    public void setTodoDetail(int index){
-        todoDetail.setValue(todoList.getValue().get(index));
-    }
-
     public MutableLiveData<TodoItem> getTodoDetail() {
         return todoDetail;
     }
@@ -62,6 +58,32 @@ public class DeliveredViewModel extends ViewModel {
                 @Override
                 public void onSuccess(ArrayList<TodoItem> value) {
                     todoList.setValue(value);
+                    loading.setValue(false);
+                    isError.setValue(false);
+                    errorMessage.setValue(null);
+                }
+
+                @Override
+                public void onError(Throwable e) {
+                    loading.setValue(false);
+                    isError.setValue(true);
+                    errorMessage.setValue(e.toString());
+                }
+            })
+        );
+    }
+
+    public void fetchDetails(int id){
+        loading.setValue(true);
+        disposable.add(
+            service.getDeliveredDetails(id)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(new DisposableSingleObserver<TodoItem>(){
+
+                @Override
+                public void onSuccess(TodoItem value) {
+                    todoDetail.setValue(value);
                     loading.setValue(false);
                     isError.setValue(false);
                     errorMessage.setValue(null);

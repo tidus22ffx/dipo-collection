@@ -73,7 +73,7 @@ public class ToDoDetailsActivity extends AppCompatActivity {
         statTelp = findViewById(R.id.status_telp);
         followUp = findViewById(R.id.followup_type);
         vstResult = findViewById(R.id.visit_result);
-        loading = findViewById(R.id.details_loading);
+        loading = findViewById(R.id.details_loader);
         scroll = findViewById(R.id.detail_scroll);
         hob = findViewById(R.id.delivered_hob_action);
         noKontrak = findViewById(R.id.delivered_no_kontrak);

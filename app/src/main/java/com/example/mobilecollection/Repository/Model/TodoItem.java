@@ -73,7 +73,69 @@ public class TodoItem {
     private String mobile;
 
     @SerializedName("prioritas")
-    private String prioritas;
+    private int prioritas;
+
+    @SerializedName("tglJatuhTempo")
+    private String tglJatuhTempo;
+
+    @SerializedName("currentBalance")
+    private String currentBalance;
+
+    @SerializedName("ptp")
+    private String ptp;
+
+    @SerializedName("ptpDate")
+    private String ptpDate;
+
+    @SerializedName("ptpAmount")
+    private int ptpAmount;
+
+    @SerializedName("remark")
+    private String remark;
+
+    @SerializedName("alamatPerubahan")
+    private String alamatPerubahan;
+
+    @SerializedName("telpPerubahan")
+    private String telpPerubahan;
+
+    @SerializedName("mobilePerubahan")
+    private String mobilePerubahan;
+
+    @SerializedName("bertemuDengan")
+    private int bertemuDengan;
+
+    @SerializedName("statusAlamat")
+    private int statusAlamat;
+
+    @SerializedName("statusTelp")
+    private int statusTelp;
+
+    @SerializedName("statusHp")
+    private int statusHp;
+
+    @SerializedName("followupType")
+    private int followupType;
+
+    @SerializedName("visitResult")
+    private int visitResult;
+
+    @SerializedName("kronologis")
+    private String kronologis;
+
+    @SerializedName("foto1")
+    private String foto1;
+
+    @SerializedName("foto2")
+    private String foto2;
+
+    public String getCurrentBalance() {
+        return currentBalance;
+    }
+
+    public String getTglJatuhTempo() {
+        return tglJatuhTempo;
+    }
 
     public TodoItem(TodoItem todoItem) {
         this.todoItem = todoItem;
@@ -129,7 +191,71 @@ public class TodoItem {
 
     public String getMobile() { return mobile; }
 
-    public String getPrioritas() { return prioritas; }
+    public int getPrioritas() { return prioritas; }
+
+    public String getPtp() {
+        return ptp;
+    }
+
+    public String getPtpDate() {
+        return ptpDate;
+    }
+
+    public int getPtpAmount() {
+        return ptpAmount;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public String getAlamatPerubahan() {
+        return alamatPerubahan;
+    }
+
+    public String getTelpPerubahan() {
+        return telpPerubahan;
+    }
+
+    public String getMobilePerubahan() {
+        return mobilePerubahan;
+    }
+
+    public int getBertemuDengan() {
+        return bertemuDengan;
+    }
+
+    public int getStatusAlamat() {
+        return statusAlamat;
+    }
+
+    public int getStatusTelp() {
+        return statusTelp;
+    }
+
+    public int getStatusHp() {
+        return statusHp;
+    }
+
+    public int getFollowupType() {
+        return followupType;
+    }
+
+    public int getVisitResult() {
+        return visitResult;
+    }
+
+    public String getKronologis() {
+        return kronologis;
+    }
+
+    public String getFoto1() {
+        return foto1;
+    }
+
+    public String getFoto2() {
+        return foto2;
+    }
 
     public class Settings{
         private String color;

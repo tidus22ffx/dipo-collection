@@ -39,16 +39,18 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
     @Override
     public void onBindViewHolder(@NonNull DeliveredViewHolder holder, final int position) {
         holder.bind(todoList.get(position));
+        TodoItem item = holder.getTodoItem();
+        final int id = item.getId();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onClickListener.onClick(position);
+                onClickListener.onClick(id);
             }
         });
     }
 
     public interface ClickListener {
-        void onClick(int position);
+        void onClick(int id);
     }
 
     @Override

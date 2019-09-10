@@ -35,5 +35,6 @@ public class ApiService {
     public Single<ArrayList<TodoItem>> getPendingList() { return api.getPendingList(); }
     public Single<ArrayList<TodoItem>> getToDoList() { return api.getToDoList(); }
     public Single<TodoItem> getToDoDetails(int id) { return api.getTodoDetails(id); }
+    public Single<TodoItem> getDeliveredDetails(int id) { return api.getDeliveredDetails(id); }
 
 }
