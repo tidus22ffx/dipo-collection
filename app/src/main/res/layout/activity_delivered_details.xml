@@ -937,6 +937,130 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/delivered_alamat_baru">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Alamat Baru :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_alamat_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Kelurahan Baru :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_kelurahan_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Kecamatan Baru :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_kecamatan_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Kodya Baru :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_kodya_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Kode Pos Baru :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_kodepos_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
@@ -961,6 +1085,38 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/delivered_hp_baru">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="No HP Baru :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_hp_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
@@ -979,6 +1135,38 @@
                         android:background="@drawable/spinner_background"
                         android:entries="@array/prioritas_arrays"
                         android:prompt="@string/prioritas_prompt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/delivered_telp_baru">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="No Telp Baru :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_telp_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -1027,6 +1215,38 @@
                         android:background="@drawable/spinner_background"
                         android:entries="@array/prioritas_arrays"
                         android:prompt="@string/prioritas_prompt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/delivered_result_other_baru">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Other :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_result_other_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
