@@ -893,10 +893,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/TextBold"
-                        android:text="Bertemu Dengan :*" />
+                        android:text="Bertemu Dengan :" />
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -916,11 +916,23 @@
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/TextBold"
-                        android:text="Status Alamat :*" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Status Alamat :" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Text"
+                            android:textColor="@color/colorPrimary"
+                            android:text=" *"/>
+                    </LinearLayout>
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -937,14 +949,210 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/delivered_alamat_baru">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextBold"
+                                android:text="Alamat baru :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/Text"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_alamat_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextBold"
+                                android:text="Kelurahan Baru :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/Text"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_kelurahan_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextBold"
+                                android:text="Kecamatan Baru :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/Text"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_kecamatan_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextBold"
+                                android:text="Kodya Baru :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/Text"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_kodya_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextBold"
+                                android:text="Kode Pos Baru :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/Text"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_kodepos_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/TextBold"
-                        android:text="Status HP :*" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Status HP :" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Text"
+                            android:textColor="@color/colorPrimary"
+                            android:text=" *"/>
+                    </LinearLayout>
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -961,14 +1169,70 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/delivered_hp_baru">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextBold"
+                                android:text="No Hp Baru:" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/Text"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_hp_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/TextBold"
-                        android:text="Status Telp :*" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Status Telp :" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Text"
+                            android:textColor="@color/colorPrimary"
+                            android:text=" *"/>
+                    </LinearLayout>
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -985,14 +1249,70 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/delivered_telp_baru">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextBold"
+                                android:text="No Telp Baru :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/Text"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_telp_baru_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/TextBold"
-                        android:text="Follow-up Type :*" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Follow Up Type :" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Text"
+                            android:textColor="@color/colorPrimary"
+                            android:text=" *"/>
+                    </LinearLayout>
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -1012,11 +1332,23 @@
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/TextBold"
-                        android:text="Visit Result OVD :*" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Visit Result OVD :" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Text"
+                            android:textColor="@color/colorPrimary"
+                            android:text=" *"/>
+                    </LinearLayout>
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -1033,14 +1365,58 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:id="@+id/delivered_result_other_baru">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Other :" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            style="@style/Text"
+                            android:elevation="1dp"
+                            android:id="@+id/delivered_result_other_edittext"
+                            android:background="@drawable/edittext_background" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/TextBold"
-                        android:text="Kronologis :*" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Kronologis :" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Text"
+                            android:textColor="@color/colorPrimary"
+                            android:text=" *"/>
+                    </LinearLayout>
 
                     <EditText
                         android:layout_width="match_parent"
@@ -1059,11 +1435,23 @@
                     android:layout_marginVertical="4dp"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/TextBold"
-                        android:text="Foto 1 :*" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Foto 1 :" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Text"
+                            android:textColor="@color/colorPrimary"
+                            android:text=" *"/>
+                    </LinearLayout>
 
                     <ImageView
                         android:src="@drawable/icon_camera"
@@ -1072,7 +1460,8 @@
                         android:layout_gravity="center"
                         android:id="@+id/foto1"
                         android:background="@drawable/edittext_background"
-                        android:foregroundGravity="center" />
+                        android:foregroundGravity="center"
+                        android:scaleType="fitCenter"/>
 
                 </LinearLayout>
 
@@ -1095,8 +1484,7 @@
                         android:layout_gravity="center"
                         android:id="@+id/foto2"
                         android:background="@drawable/edittext_background"
-                        android:foregroundGravity="center"
-                        android:padding="24dp"/>
+                        android:foregroundGravity="center"/>
 
                 </LinearLayout>
 

@@ -1,10 +1,18 @@
 package com.example.mobilecollection.View;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.os.Bundle;
-import android.util.Log;
+import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -20,7 +28,14 @@ import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.ViewModel.ToDoViewModel;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class ToDoDetailsActivity extends AppCompatActivity {
+    private static final int PIC_FOTO_1 = 1;
+    private static final int PIC_FOTO_2 = 2;
     String[] priority = { "Pilih Prioritas", "Rendah", "Tinggi" };
     String[] sesuai = { "Pilih Salah Satu", "Sesuai", "Tidak Sesuai" };
     String[] meet = { "Pilih Salah Satu", "Lessee", "Suami", "Istri", "Anak",
@@ -37,10 +52,13 @@ public class ToDoDetailsActivity extends AppCompatActivity {
     ProgressBar loading;
     ScrollView scroll;
     TodoItem todoDetail;
+    ImageView foto1, foto2;
     TextView hob, noKontrak, namaCustomer, jatuhTempo, osNet, brand,
             expiredDate, currentStatus, bucket, alamat, mobile, telp, ptp, ptpDate,
             overdue, totalPeriod, uslPaid, unit, currentUnit, jumlahAngsuran, balance, currentBalance,
             ptpAmount, remarkAdmin, alamatPerubahan, telpPerubahan, mobilePerubahan, nopol;
+    LinearLayout alamatBaru, telpBaru, hpBaru, resultOtherBaru;
+    EditText kronologi, newAlamat, newKelurahan, newKecamatan, newKodya, newKodePos, newHp, newTelp, newOther;
     int id;
 
     @Override
@@ -63,7 +81,75 @@ public class ToDoDetailsActivity extends AppCompatActivity {
 
         initializeSpinner();
         initializeObserver();
+
+        statAlamat.setOnItemSelectedListener(myListener);
+        statHp.setOnItemSelectedListener(myListener);
+        statTelp.setOnItemSelectedListener(myListener);
+        vstResult.setOnItemSelectedListener(myListener);
+
+        foto1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cameraLaunch = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraLaunch, PIC_FOTO_1);
+            }
+        });
+
+        foto2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cameraLaunch = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraLaunch, PIC_FOTO_2);
+            }
+        });
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PIC_FOTO_1) {
+            Bitmap image = (Bitmap) data.getExtras().get("data");
+            foto1.setImageBitmap(image);
+        } else if (requestCode == PIC_FOTO_2) {
+            Bitmap image = (Bitmap) data.getExtras().get("data");
+            foto2.setImageBitmap(image);
+        }
+    }
+
+    private AdapterView.OnItemSelectedListener myListener = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            if(parent.getId() == R.id.status_alamat) {
+                if (position == 2) {
+                    alamatBaru.setVisibility(View.VISIBLE);
+                } else {
+                    alamatBaru.setVisibility(View.GONE);
+                }
+            } else if (parent.getId() == R.id.status_hp) {
+                if (position == 2) {
+                    hpBaru.setVisibility(View.VISIBLE);
+                } else {
+                    hpBaru.setVisibility(View.GONE);
+                }
+            } else if (parent.getId() == R.id.status_telp) {
+                if (position == 2) {
+                    telpBaru.setVisibility(View.VISIBLE);
+                } else {
+                    telpBaru.setVisibility(View.GONE);
+                }
+            } else if (parent.getId() == R.id.visit_result) {
+                if (position == 11) {
+                    resultOtherBaru.setVisibility(View.VISIBLE);
+                } else {
+                    resultOtherBaru.setVisibility(View.GONE);
+                }
+            }
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+            Toast.makeText(ToDoDetailsActivity.this,
+                    "show nothing", Toast.LENGTH_LONG).show();
+        }
+    };
 
     private void initializeFindView() {
         prioritas = findViewById(R.id.prioritas_spinner);
@@ -103,6 +189,21 @@ public class ToDoDetailsActivity extends AppCompatActivity {
         telpPerubahan = findViewById(R.id.delivered_telp_perubahan);
         mobilePerubahan = findViewById(R.id.delivered_mobile_perubahan);
         nopol = findViewById(R.id.delivered_plat);
+        kronologi = findViewById(R.id.kronologis);
+        alamatBaru = findViewById(R.id.delivered_alamat_baru);
+        hpBaru = findViewById(R.id.delivered_hp_baru);
+        telpBaru = findViewById(R.id.delivered_telp_baru);
+        resultOtherBaru = findViewById(R.id.delivered_result_other_baru);
+        newAlamat = findViewById(R.id.delivered_alamat_baru_edittext);
+        newKelurahan = findViewById(R.id.delivered_kelurahan_baru_edittext);
+        newKecamatan = findViewById(R.id.delivered_kecamatan_baru_edittext);
+        newKodya = findViewById(R.id.delivered_kodya_baru_edittext);
+        newKodePos = findViewById(R.id.delivered_kodepos_baru_edittext);
+        newHp = findViewById(R.id.delivered_hp_baru_edittext);
+        newTelp = findViewById(R.id.delivered_telp_baru_edittext);
+        newOther = findViewById(R.id.delivered_result_other_edittext);
+        foto1 = findViewById(R.id.foto1);
+        foto2 = findViewById(R.id.foto2);
     }
 
 
