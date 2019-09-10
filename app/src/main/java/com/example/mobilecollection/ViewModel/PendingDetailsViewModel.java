@@ -1,28 +1,36 @@
 package com.example.mobilecollection.ViewModel;
 
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
+import android.app.Application;
 
-import com.example.mobilecollection.Repository.API.ApiService;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.MutableLiveData;
+
+import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 
-import java.util.ArrayList;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.observers.DisposableSingleObserver;
+import io.reactivex.observers.DisposableMaybeObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class DeliveredViewModel extends ViewModel {
+public class PendingDetailsViewModel extends AndroidViewModel {
 
-    ApiService service = new ApiService();
+    private AppDatabase db;
 
-    MutableLiveData<ArrayList<TodoItem>> todoList = new MutableLiveData<>();
+    public PendingDetailsViewModel(@NonNull Application application) {
+        super(application);
+        db = AppDatabase.getDatabase(application);
+
+    }
+
+    MutableLiveData<TodoItem> todoDetail = new MutableLiveData<>();
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
 
-    public MutableLiveData<ArrayList<TodoItem>> getTodoList() {
-        return todoList;
+    public MutableLiveData<TodoItem> getTodoDetail() {
+        return todoDetail;
     }
 
     public MutableLiveData<Boolean> getLoading() {
@@ -39,20 +47,16 @@ public class DeliveredViewModel extends ViewModel {
 
     CompositeDisposable disposable = new CompositeDisposable();
 
-    public void refreshDeliveredList(){
-        fetchTodolist();
-    }
-
-    private void fetchTodolist(){
-        loading.setValue(true);
+    public void fetchDetails(int id) {
         disposable.add(
-            service.getDeliveredList()
+            db.pendingTodoListDao()
+            .getPendingDetail(id)
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribeWith(new DisposableSingleObserver<ArrayList<TodoItem>>() {
+            .subscribeWith(new DisposableMaybeObserver<TodoItem>() {
                 @Override
-                public void onSuccess(ArrayList<TodoItem> value) {
-                    todoList.setValue(value);
+                public void onSuccess(TodoItem todoItem) {
+                    todoDetail.setValue(todoItem);
                     loading.setValue(false);
                     isError.setValue(false);
                     errorMessage.setValue(null);
@@ -64,10 +68,15 @@ public class DeliveredViewModel extends ViewModel {
                     isError.setValue(true);
                     errorMessage.setValue(e.toString());
                 }
+
+                @Override
+                public void onComplete() {
+                    loading.setValue(false);
+                    isError.setValue(false);
+                }
             })
         );
     }
-
 
     @Override
     protected void onCleared() {
@@ -75,3 +84,5 @@ public class DeliveredViewModel extends ViewModel {
         disposable.clear();
     }
 }
+
+

@@ -31,6 +31,9 @@
         <activity
             android:name=".View.ToDoListActivity"
             android:parentActivityName=".View.HomeActivity" />
+        <activity
+            android:name=".View.PendingDetailsActivity"
+            android:parentActivityName=".View.PendingActivity"/>
         <activity android:name=".View.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

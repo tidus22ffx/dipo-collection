@@ -1,21 +1,32 @@
 package com.example.mobilecollection.ViewModel;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.example.mobilecollection.Repository.API.ApiService;
+import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.observers.DisposableSingleObserver;
+import io.reactivex.observers.DisposableMaybeObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class PendingViewModel extends ViewModel {
+public class PendingViewModel extends AndroidViewModel {
 
     ApiService service = new ApiService();
+    private AppDatabase db;
+
+    public PendingViewModel(@NonNull Application application) {
+        super(application);
+        db = AppDatabase.getDatabase(application);
+    }
 
     MutableLiveData<ArrayList<TodoItem>> pendingList = new MutableLiveData<>();
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
@@ -47,25 +58,33 @@ public class PendingViewModel extends ViewModel {
     private void fetchPendinglist(){
         loading.setValue(true);
         disposable.add(
-                service.getPendingList()
-                        .subscribeOn(Schedulers.newThread())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribeWith(new DisposableSingleObserver<ArrayList<TodoItem>>() {
-                            @Override
-                            public void onSuccess(ArrayList<TodoItem> value) {
-                                pendingList.setValue(value);
-                                loading.setValue(false);
-                                isError.setValue(false);
-                                errorMessage.setValue(null);
-                            }
+            db.pendingTodoListDao()
+            .getPendingList()
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(new DisposableMaybeObserver<List<TodoItem>>() {
 
-                            @Override
-                            public void onError(Throwable e) {
-                                loading.setValue(false);
-                                isError.setValue(true);
-                                errorMessage.setValue(e.toString());
-                            }
-                        })
+                @Override
+                public void onSuccess(List<TodoItem> todoItems) {
+                    loading.setValue(false);
+                    ArrayList list = new ArrayList<TodoItem>();
+                    list.addAll(todoItems);
+                    pendingList.setValue(list);
+                }
+
+                @Override
+                public void onError(Throwable e) {
+                    loading.setValue(false);
+                    isError.setValue(true);
+                    errorMessage.setValue(e.toString());
+                }
+
+                @Override
+                public void onComplete() {
+                    loading.setValue(false);
+                    isError.setValue(false);
+                }
+            })
         );
     }
 

@@ -6,6 +6,8 @@
     <string name="show_password">Tampilkan Password</string>
 
     <string name="prioritas_prompt">Pilih Prioritas</string>
+    <string name="pending_dialog">Save data pending</string>
+    <string name="ok_button">OK</string>
 
     <string-array name="prioritas_arrays">
         <item>Tinggi</item>

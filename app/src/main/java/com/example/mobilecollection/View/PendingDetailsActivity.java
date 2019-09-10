@@ -1,17 +1,8 @@
 package com.example.mobilecollection.View;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
-import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,19 +12,26 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.ViewModel.DeliveredDetailsViewModel;
+import com.example.mobilecollection.ViewModel.PendingDetailsViewModel;
 import com.example.mobilecollection.utilities.Utilities;
 
-import java.net.URL;
-
-public class DeliveredDetailsActivity extends AppCompatActivity {
+public class PendingDetailsActivity extends AppCompatActivity {
 
     ConstraintLayout fieldContainer;
-    DeliveredDetailsViewModel viewModel;
+    PendingDetailsViewModel viewModel;
     ProgressBar loading;
     TodoItem todoDetail;
     Spinner prioritas;
@@ -76,8 +74,6 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
     ImageView foto2;
     Button savePriority, save, submit;
 
-    AlertDialog saveLoadingDialog, saveCompletedDialog;
-
     String[] priority = { "Pilih Prioritas", "Rendah", "Normal", "Tinggi" };
     String[] sesuai = { "Pilih Salah Satu", "Sesuai", "Tidak Sesuai" };
     String[] meet = { "Pilih Salah Satu", "Lessee", "Suami", "Istri", "Anak",
@@ -90,22 +86,16 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
             "Lessee Melakukan Pembayaran", "Lainnya" };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivered_details);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         TextView textView = findViewById(R.id.toolbar_text);
-        textView.setText("Delivered Detail");
+        textView.setText("Pending Detail");
 
         initializeView();
         initializeSpinner();
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewModel.saveToDatabase();
-            }
-        });
 
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
         toolbar.setTitleTextColor(Color.WHITE);
@@ -113,7 +103,7 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
 
         int id = getIntent().getIntExtra("detailId", 0 );
 
-        viewModel = ViewModelProviders.of(this).get(DeliveredDetailsViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(PendingDetailsViewModel.class);
         viewModel.fetchDetails(id);
 
         observeViewModel();
@@ -142,43 +132,6 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
                 }
             }
         });
-
-        viewModel.getSaveLoading().observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean isSaving) {
-                if(isSaving){
-                    AlertDialog.Builder builder = new AlertDialog.Builder(DeliveredDetailsActivity.this);
-                    saveLoadingDialog = Utilities.setProgressDialog(builder);
-                } else {
-                    saveLoadingDialog.dismiss();
-                }
-            }
-        });
-
-        viewModel.getSavedTodoItem().observe(this, new Observer<TodoItem>() {
-            @Override
-            public void onChanged(TodoItem todoItem) {
-                if(todoItem != null){
-                    buildSaveDialog(todoItem);
-                    saveCompletedDialog.show();
-                }
-            }
-        });
-    }
-
-    private void buildSaveDialog(TodoItem savedItem){
-        AlertDialog.Builder builder = new AlertDialog.Builder(DeliveredDetailsActivity.this);
-        builder.setMessage(R.string.pending_dialog + " " + savedItem.getCustomerName())
-           .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
-               @Override
-               public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivity(intent);
-                    finish();
-               }
-           });
-
-        saveCompletedDialog = builder.create();
     }
 
     private void setViewData(TodoItem todoItem){
@@ -220,11 +173,11 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
         visitResult.setSelection(todoItem.getVisitResult());
         kronologis.setText(todoItem.getKronologis());
         Glide.with(this)
-            .setDefaultRequestOptions(new RequestOptions().placeholder(R.drawable.icon_camera))
-            .load(todoItem.getFoto1()).into(foto1);
+                .setDefaultRequestOptions(new RequestOptions().placeholder(R.drawable.icon_camera))
+                .load(todoItem.getFoto1()).into(foto1);
         Glide.with(this)
-            .setDefaultRequestOptions(new RequestOptions().placeholder(R.drawable.icon_camera))
-            .load(todoItem.getFoto2()).into(foto2);
+                .setDefaultRequestOptions(new RequestOptions().placeholder(R.drawable.icon_camera))
+                .load(todoItem.getFoto2()).into(foto2);
     }
 
     private void initializeSpinner() {
@@ -309,4 +262,6 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
         fieldContainer = findViewById(R.id.detail_container);
         loading = findViewById(R.id.details_loader);
     }
+
+
 }

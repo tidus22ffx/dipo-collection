@@ -15,16 +15,17 @@ import com.example.mobilecollection.Repository.Model.TodoItem;
 import java.util.ArrayList;
 
 public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecyclerAdapter.PendingViewHolder> {
-
+    private ClickListener onClickListener;
     private ArrayList<TodoItem> pendingList = new ArrayList<>();
     public PendingRecyclerAdapter(ArrayList<TodoItem> pendingList){
         this.pendingList = pendingList;
     }
 
-    public void updateList(ArrayList<TodoItem> newTodoItems){
+    public void updateList(ArrayList<TodoItem> newTodoItems, ClickListener onClick){
         pendingList.clear();
         pendingList = newTodoItems;
         notifyDataSetChanged();
+        onClickListener = onClick;
     }
 
     @NonNull
@@ -38,11 +39,22 @@ public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecycler
     @Override
     public void onBindViewHolder(@NonNull PendingViewHolder holder, int position) {
         holder.bind(pendingList.get(position));
+        final int itemId = holder.getId();
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickListener.onClick(itemId);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return pendingList.size();
+    }
+
+    public interface ClickListener {
+        void onClick(int id);
     }
 
     class PendingViewHolder extends RecyclerView.ViewHolder {
@@ -51,6 +63,11 @@ public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecycler
         private TextView customerName;
         private TextView plat;
         private ImageView imageView;
+        private int id;
+
+        public int getId() {
+            return id;
+        }
 
         public PendingViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +78,7 @@ public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecycler
         }
 
         void bind(TodoItem todoItem){
+            id = todoItem.getId();
             contractNo.setText(todoItem.getContractNo());
             customerName.setText(todoItem.getCustomerName());
             plat.setText(todoItem.getPlat());

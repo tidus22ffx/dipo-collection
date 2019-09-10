@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ import com.example.mobilecollection.ViewModel.PendingViewModel;
 
 import java.util.ArrayList;
 
-public class PendingActivity extends AppCompatActivity {
+public class PendingActivity extends AppCompatActivity implements PendingRecyclerAdapter.ClickListener {
 
     RecyclerView pendingRecyclerView;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -70,7 +71,7 @@ public class PendingActivity extends AppCompatActivity {
             @Override
             public void onChanged(ArrayList<TodoItem> pendingList) {
                 if(pendingList != null){
-                    adapter.updateList(pendingList);
+                    adapter.updateList(pendingList, PendingActivity.this);
                     pendingRecyclerView.setVisibility(View.VISIBLE);
                 }
             }
@@ -104,5 +105,12 @@ public class PendingActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(int id) {
+        Intent intent = new Intent(this, PendingDetailsActivity.class);
+        intent.putExtra("detailId", id);
+        startActivity(intent);
     }
 }

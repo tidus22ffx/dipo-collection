@@ -1,12 +1,17 @@
 package com.example.mobilecollection.Repository.Model;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
+@Entity
 public class TodoItem {
 
-    private TodoItem todoItem;
-
+    @PrimaryKey
     @SerializedName("id")
+    @NonNull
     private int id;
 
     @SerializedName("contractNo")
@@ -20,9 +25,6 @@ public class TodoItem {
 
     @SerializedName("plat")
     private String plat;
-
-    @SerializedName("settings")
-    private Settings settings;
 
     @SerializedName("hobAction")
     private String hobAction;
@@ -137,10 +139,6 @@ public class TodoItem {
         return tglJatuhTempo;
     }
 
-    public TodoItem(TodoItem todoItem) {
-        this.todoItem = todoItem;
-    }
-
     public int getId() {
         return id;
     }
@@ -154,8 +152,6 @@ public class TodoItem {
     }
 
     public String getPlat() { return plat; }
-
-    public Settings getSettings() { return settings; }
 
     public String getCustomerName() { return customerName; }
 
@@ -257,43 +253,164 @@ public class TodoItem {
         return foto2;
     }
 
-    public class Settings{
-        private String color;
-        private String size;
-        private boolean shadow;
-        private boolean finished;
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        public String getColor() {
-            return color;
-        }
+    public void setContractNo(String contractNo) {
+        this.contractNo = contractNo;
+    }
 
-        public void setColor(String color) {
-            this.color = color;
-        }
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
-        public String getSize() {
-            return size;
-        }
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
 
-        public void setSize(String size) {
-            this.size = size;
-        }
+    public void setPlat(String plat) {
+        this.plat = plat;
+    }
 
-        public boolean isShadow() {
-            return shadow;
-        }
+    public void setHobAction(String hobAction) {
+        this.hobAction = hobAction;
+    }
 
-        public void setShadow(boolean shadow) {
-            this.shadow = shadow;
-        }
+    public void setOverdue(int overdue) {
+        this.overdue = overdue;
+    }
 
-        public boolean isFinished() {
-            return finished;
-        }
+    public void setReceivable(String receivable) {
+        this.receivable = receivable;
+    }
 
-        public void setFinished(boolean finished) {
-            this.finished = finished;
-        }
+    public void setTotalPeriod(String totalPeriod) {
+        this.totalPeriod = totalPeriod;
+    }
+
+    public void setPaid(String paid) {
+        this.paid = paid;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setCurrentUnit(String currentUnit) {
+        this.currentUnit = currentUnit;
+    }
+
+    public void setExpiredDate(String expiredDate) {
+        this.expiredDate = expiredDate;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setAngsuran(String angsuran) {
+        this.angsuran = angsuran;
+    }
+
+    public void setBalance(String balance) {
+        this.balance = balance;
+    }
+
+    public void setBucket(String bucket) {
+        this.bucket = bucket;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public void setTelp(String telp) {
+        this.telp = telp;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public void setPrioritas(int prioritas) {
+        this.prioritas = prioritas;
+    }
+
+    public void setTglJatuhTempo(String tglJatuhTempo) {
+        this.tglJatuhTempo = tglJatuhTempo;
+    }
+
+    public void setCurrentBalance(String currentBalance) {
+        this.currentBalance = currentBalance;
+    }
+
+    public void setPtp(String ptp) {
+        this.ptp = ptp;
+    }
+
+    public void setPtpDate(String ptpDate) {
+        this.ptpDate = ptpDate;
+    }
+
+    public void setPtpAmount(int ptpAmount) {
+        this.ptpAmount = ptpAmount;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public void setAlamatPerubahan(String alamatPerubahan) {
+        this.alamatPerubahan = alamatPerubahan;
+    }
+
+    public void setTelpPerubahan(String telpPerubahan) {
+        this.telpPerubahan = telpPerubahan;
+    }
+
+    public void setMobilePerubahan(String mobilePerubahan) {
+        this.mobilePerubahan = mobilePerubahan;
+    }
+
+    public void setBertemuDengan(int bertemuDengan) {
+        this.bertemuDengan = bertemuDengan;
+    }
+
+    public void setStatusAlamat(int statusAlamat) {
+        this.statusAlamat = statusAlamat;
+    }
+
+    public void setStatusTelp(int statusTelp) {
+        this.statusTelp = statusTelp;
+    }
+
+    public void setStatusHp(int statusHp) {
+        this.statusHp = statusHp;
+    }
+
+    public void setFollowupType(int followupType) {
+        this.followupType = followupType;
+    }
+
+    public void setVisitResult(int visitResult) {
+        this.visitResult = visitResult;
+    }
+
+    public void setKronologis(String kronologis) {
+        this.kronologis = kronologis;
+    }
+
+    public void setFoto1(String foto1) {
+        this.foto1 = foto1;
+    }
+
+    public void setFoto2(String foto2) {
+        this.foto2 = foto2;
     }
 }
 

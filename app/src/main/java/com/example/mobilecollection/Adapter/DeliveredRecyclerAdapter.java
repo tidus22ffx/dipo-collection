@@ -39,8 +39,7 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
     @Override
     public void onBindViewHolder(@NonNull DeliveredViewHolder holder, final int position) {
         holder.bind(todoList.get(position));
-        TodoItem item = holder.getTodoItem();
-        final int id = item.getId();
+        final int id = holder.getId();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,10 +63,10 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
         private TextView customerName;
         private TextView plat;
         private ImageView imageView;
-        private TodoItem todoItem;
+        private int itemId;
 
-        public TodoItem getTodoItem() {
-            return todoItem;
+        public int getId() {
+            return itemId;
         }
 
         public DeliveredViewHolder(@NonNull View itemView) {
@@ -83,7 +82,7 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
             customerName.setText(todoItem.getCustomerName());
             plat.setText(todoItem.getPlat());
             imageView.setImageResource(R.drawable.ic_checklist);
-            this.todoItem = todoItem;
+            itemId = todoItem.getId();
         }
     }
 }
