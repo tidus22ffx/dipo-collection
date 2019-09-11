@@ -21,7 +21,6 @@ public class PendingDetailsViewModel extends AndroidViewModel {
     public PendingDetailsViewModel(@NonNull Application application) {
         super(application);
         db = AppDatabase.getDatabase(application);
-
     }
 
     MutableLiveData<TodoItem> todoDetail = new MutableLiveData<>();

@@ -5,14 +5,10 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-
-import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.Model.TodoItem;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableMaybeObserver;
@@ -20,7 +16,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class PendingViewModel extends AndroidViewModel {
 
-    ApiService service = new ApiService();
     private AppDatabase db;
 
     public PendingViewModel(@NonNull Application application) {
