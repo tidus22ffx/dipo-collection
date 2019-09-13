@@ -5,10 +5,14 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.Model.TodoItem;
+import com.example.mobilecollection.di.DaggerApiComponent;
+
+import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -16,8 +20,9 @@ import io.reactivex.observers.DisposableCompletableObserver;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class ToDoDetailsViewModel extends AndroidViewModel {
-    ApiService service = new ApiService();
+public class ToDoDetailsViewModel extends ViewModel {
+    @Inject
+    ApiService service;
     private AppDatabase db;
 
     MutableLiveData<TodoItem> todoItemDetail = new MutableLiveData<>();
@@ -29,9 +34,8 @@ public class ToDoDetailsViewModel extends AndroidViewModel {
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
 
-    public ToDoDetailsViewModel(@NonNull Application application) {
-        super(application);
-        db = AppDatabase.getDatabase(application);
+    public ToDoDetailsViewModel() {
+        this.service = DaggerApiComponent.builder().build().service();
     }
 
     public MutableLiveData<Boolean> getLoading() {
