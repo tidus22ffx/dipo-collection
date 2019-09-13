@@ -23,8 +23,8 @@ public class ToDoViewModel extends ViewModel {
     @Inject
     ApiService service;
 
-    {
-        DaggerApiComponent.create().inject(this);
+    public ToDoViewModel() {
+        this.service = DaggerApiComponent.builder().build().service();
     }
 
     MutableLiveData<ArrayList<TodoItem>> todoList = new MutableLiveData<>();

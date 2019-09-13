@@ -21,8 +21,8 @@ public class DeliveredViewModel extends ViewModel {
     @Inject
     ApiService service;
 
-    {
-        DaggerApiComponent.create().inject(this);
+    public DeliveredViewModel() {
+        this.service = DaggerApiComponent.builder().build().service();
     }
 
     MutableLiveData<ArrayList<TodoItem>> todoList = new MutableLiveData<>();

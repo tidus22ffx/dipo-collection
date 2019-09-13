@@ -11,6 +11,11 @@ import androidx.room.Room;
 import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.Model.TodoItem;
+import com.example.mobilecollection.di.ApiComponent;
+import com.example.mobilecollection.di.DaggerApiComponent;
+import com.example.mobilecollection.di.DatabaseModule;
+
+import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -20,8 +25,11 @@ import io.reactivex.schedulers.Schedulers;
 
 public class DeliveredDetailsViewModel extends AndroidViewModel {
 
-    ApiService service = new ApiService();
-    private AppDatabase db;
+    @Inject
+    ApiService service;
+
+    @Inject
+    AppDatabase db;
 
     MutableLiveData<TodoItem> todoDetail = new MutableLiveData<>();
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
@@ -34,7 +42,11 @@ public class DeliveredDetailsViewModel extends AndroidViewModel {
 
     public DeliveredDetailsViewModel(@NonNull Application application) {
         super(application);
-        db = AppDatabase.getDatabase(application);
+//        db = AppDatabase.getDatabase(application);
+        ApiComponent component = DaggerApiComponent.builder()
+                .databaseModule(new DatabaseModule(application)).build();
+        this.service = component.service();
+        db = component.appDatabase();
     }
 
     public MutableLiveData<Boolean> getLoading() {
