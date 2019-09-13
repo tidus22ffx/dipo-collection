@@ -11,8 +11,11 @@ import androidx.lifecycle.ViewModel;
 import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.Model.TodoItem;
+import com.example.mobilecollection.di.DaggerApiComponent;
 
 import java.util.ArrayList;
+
+import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -20,8 +23,10 @@ import io.reactivex.observers.DisposableCompletableObserver;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class ToDoViewModel extends AndroidViewModel {
-    ApiService service = new ApiService();
+public class ToDoViewModel extends ViewModel {
+
+    @Inject
+    ApiService service;
 
     MutableLiveData<ArrayList<TodoItem>> todoList = new MutableLiveData<>();
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
@@ -29,8 +34,8 @@ public class ToDoViewModel extends AndroidViewModel {
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
     ArrayList<TodoItem> todoItems;
 
-    public ToDoViewModel(@NonNull Application application) {
-        super(application);
+    public ToDoViewModel() {
+        this.service = DaggerApiComponent.builder().build().service();
     }
 
     public MutableLiveData<ArrayList<TodoItem>> getTodoList() {

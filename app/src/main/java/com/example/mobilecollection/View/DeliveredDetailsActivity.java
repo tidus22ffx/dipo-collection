@@ -172,8 +172,8 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
            .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                @Override
                public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(getApplicationContext(), DeliveredActivity.class);
+//                    startActivity(intent);
                     finish();
                }
            });

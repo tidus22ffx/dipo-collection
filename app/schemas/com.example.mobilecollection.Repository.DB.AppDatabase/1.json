@@ -1,0 +1,268 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "04614bc17e2b07709e3bd203b2d2f8dc",
+    "entities": [
+      {
+        "tableName": "TodoItem",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `contractNo` TEXT, `customerName` TEXT, `orderDate` TEXT, `plat` TEXT, `hobAction` TEXT, `overdue` INTEGER NOT NULL, `receivable` TEXT, `totalPeriod` TEXT, `paid` TEXT, `unit` TEXT, `brand` TEXT, `currentUnit` TEXT, `expiredDate` TEXT, `status` TEXT, `angsuran` TEXT, `balance` TEXT, `bucket` TEXT, `alamat` TEXT, `telp` TEXT, `mobile` TEXT, `prioritas` INTEGER NOT NULL, `tglJatuhTempo` TEXT, `currentBalance` TEXT, `ptp` TEXT, `ptpDate` TEXT, `ptpAmount` INTEGER NOT NULL, `remark` TEXT, `alamatPerubahan` TEXT, `telpPerubahan` TEXT, `mobilePerubahan` TEXT, `bertemuDengan` INTEGER NOT NULL, `statusAlamat` INTEGER NOT NULL, `statusTelp` INTEGER NOT NULL, `statusHp` INTEGER NOT NULL, `followupType` INTEGER NOT NULL, `visitResult` INTEGER NOT NULL, `kronologis` TEXT, `foto1` TEXT, `foto2` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contractNo",
+            "columnName": "contractNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerName",
+            "columnName": "customerName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "orderDate",
+            "columnName": "orderDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plat",
+            "columnName": "plat",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hobAction",
+            "columnName": "hobAction",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "overdue",
+            "columnName": "overdue",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "receivable",
+            "columnName": "receivable",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "totalPeriod",
+            "columnName": "totalPeriod",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "paid",
+            "columnName": "paid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "unit",
+            "columnName": "unit",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "brand",
+            "columnName": "brand",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "currentUnit",
+            "columnName": "currentUnit",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "expiredDate",
+            "columnName": "expiredDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "angsuran",
+            "columnName": "angsuran",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "balance",
+            "columnName": "balance",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bucket",
+            "columnName": "bucket",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "alamat",
+            "columnName": "alamat",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telp",
+            "columnName": "telp",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mobile",
+            "columnName": "mobile",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prioritas",
+            "columnName": "prioritas",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tglJatuhTempo",
+            "columnName": "tglJatuhTempo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "currentBalance",
+            "columnName": "currentBalance",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ptp",
+            "columnName": "ptp",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ptpDate",
+            "columnName": "ptpDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ptpAmount",
+            "columnName": "ptpAmount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remark",
+            "columnName": "remark",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "alamatPerubahan",
+            "columnName": "alamatPerubahan",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telpPerubahan",
+            "columnName": "telpPerubahan",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mobilePerubahan",
+            "columnName": "mobilePerubahan",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bertemuDengan",
+            "columnName": "bertemuDengan",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "statusAlamat",
+            "columnName": "statusAlamat",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "statusTelp",
+            "columnName": "statusTelp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "statusHp",
+            "columnName": "statusHp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "followupType",
+            "columnName": "followupType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "visitResult",
+            "columnName": "visitResult",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kronologis",
+            "columnName": "kronologis",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "foto1",
+            "columnName": "foto1",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "foto2",
+            "columnName": "foto2",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '04614bc17e2b07709e3bd203b2d2f8dc')"
+    ]
+  }
+}
