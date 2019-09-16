@@ -1,5 +1,6 @@
 package com.example.mobilecollection.View;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -10,6 +11,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
@@ -26,7 +29,9 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
+import com.example.mobilecollection.ViewModel.ToDoDetailsViewModel;
 import com.example.mobilecollection.ViewModel.ToDoViewModel;
+import com.example.mobilecollection.utilities.Utilities;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -46,9 +51,9 @@ public class ToDoDetailsActivity extends AppCompatActivity {
                             "OL Berhasil Ditarik", "Legal Case", "Klaim Asuransi Namun Direject",
                             "Klaim Asuransi", "Deadlock (OL sudah 3 bln dalam pelacakan)", "Kontrak Tidak Difollow Up / Kurang Personil",
                             "Lessee Melakukan Pembayaran", "Lainnya" };
-
+    AlertDialog saveLoadingDialog, saveCompletedDialog;
     Spinner prioritas, bertemu, statAlamat, statHp, statTelp, followUp, vstResult;
-    ToDoViewModel toDoViewModel;
+    ToDoDetailsViewModel toDoViewModel;
     ProgressBar loading;
     ScrollView scroll;
     TodoItem todoDetail;
@@ -59,6 +64,7 @@ public class ToDoDetailsActivity extends AppCompatActivity {
             ptpAmount, remarkAdmin, alamatPerubahan, telpPerubahan, mobilePerubahan, nopol;
     LinearLayout alamatBaru, telpBaru, hpBaru, resultOtherBaru;
     EditText kronologi, newAlamat, newKelurahan, newKecamatan, newKodya, newKodePos, newHp, newTelp, newOther;
+    Button submit, save;
     int id;
 
     @Override
@@ -76,7 +82,7 @@ public class ToDoDetailsActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         id = extras.getInt("index");
-        toDoViewModel = ViewModelProviders.of(this).get(ToDoViewModel.class);
+        toDoViewModel = ViewModelProviders.of(this).get(ToDoDetailsViewModel.class);
         toDoViewModel.fetchDetail(id);
 
         initializeSpinner();
@@ -100,6 +106,13 @@ public class ToDoDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent cameraLaunch = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraLaunch, PIC_FOTO_2);
+            }
+        });
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDoViewModel.saveToDatabase();
             }
         });
     }
@@ -204,6 +217,8 @@ public class ToDoDetailsActivity extends AppCompatActivity {
         newOther = findViewById(R.id.delivered_result_other_edittext);
         foto1 = findViewById(R.id.foto1);
         foto2 = findViewById(R.id.foto2);
+        submit = findViewById(R.id.detail_submit_button);
+        save = findViewById(R.id.detail_save_button);
     }
 
 
@@ -227,6 +242,28 @@ public class ToDoDetailsActivity extends AppCompatActivity {
                     todoDetail = todoItem;
                     scroll.setVisibility(View.VISIBLE);
                     initializeDetail(todoDetail);
+                }
+            }
+        });
+
+        toDoViewModel.getSaveLoading().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean isSaving) {
+                if(isSaving){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ToDoDetailsActivity.this);
+                    saveLoadingDialog = Utilities.setProgressDialog(builder);
+                } else {
+                    saveLoadingDialog.dismiss();
+                }
+            }
+        });
+
+        toDoViewModel.getSavedTodoItem().observe(this, new Observer<TodoItem>() {
+            @Override
+            public void onChanged(TodoItem todoItem) {
+                if(todoItem != null){
+                    buildSaveDialog(todoItem);
+                    saveCompletedDialog.show();
                 }
             }
         });
@@ -298,5 +335,20 @@ public class ToDoDetailsActivity extends AppCompatActivity {
                 new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, visitResult);
         visitResultSpinner.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         vstResult.setAdapter(visitResultSpinner);
+    }
+
+    private void buildSaveDialog(TodoItem savedItem){
+        AlertDialog.Builder builder = new AlertDialog.Builder(ToDoDetailsActivity.this);
+        builder.setMessage(R.string.pending_dialog + " " + savedItem.getCustomerName())
+                .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+
+        saveCompletedDialog = builder.create();
     }
 }
