@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ import com.example.mobilecollection.utilities.Utilities;
 
 public class PendingDetailsActivity extends AppCompatActivity {
 
-    ConstraintLayout fieldContainer;
+    ScrollView fieldContainer;
     PendingDetailsViewModel viewModel;
     ProgressBar loading;
     TodoItem todoDetail;
@@ -259,7 +260,7 @@ public class PendingDetailsActivity extends AppCompatActivity {
         savePriority = findViewById(R.id.save_prioritas_button);
         save = findViewById(R.id.detail_save_button);
         submit = findViewById(R.id.detail_submit_button);
-        fieldContainer = findViewById(R.id.detail_container);
+        fieldContainer = findViewById(R.id.detail_scroll);
         loading = findViewById(R.id.details_loader);
     }
 

@@ -16,7 +16,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {ApiModule.class, DatabaseModule.class})
+@Component(modules = {ApiModule.class, DatabaseModule.class, ContextModule.class})
 public interface ApiComponent {
 
 //    void inject(ApiService service);
@@ -29,6 +29,7 @@ public interface ApiComponent {
 //    void inject(PendingViewModel viewModel);
 //    void inject(DeliveredDetailsViewModel viewModel);
 
+//    Context context();
     ApiService service();
     Api api();
     AppDatabase appDatabase();

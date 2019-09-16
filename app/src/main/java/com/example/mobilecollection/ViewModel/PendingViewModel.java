@@ -23,9 +23,9 @@ import io.reactivex.schedulers.Schedulers;
 
 public class PendingViewModel extends AndroidViewModel {
 
+    @Inject
     AppDatabase db;
 
-    @Inject
     public PendingViewModel(@NonNull Application application) {
         super(application);
         db = DaggerApiComponent.builder().databaseModule(new DatabaseModule(application))

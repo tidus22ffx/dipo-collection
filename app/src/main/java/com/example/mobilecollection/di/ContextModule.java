@@ -2,6 +2,8 @@ package com.example.mobilecollection.di;
 
 import android.content.Context;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -14,6 +16,7 @@ public class ContextModule {
         this.app = context;
     }
 
+    @Singleton
     @Provides
     public Context provideContext(){
         return app;
