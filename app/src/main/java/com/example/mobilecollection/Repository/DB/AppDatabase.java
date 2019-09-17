@@ -7,6 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.mobilecollection.Repository.DB.DAO.PendingTodoListDao;
+import com.example.mobilecollection.Repository.DB.DAO.SaveDetailDao;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 
 import javax.inject.Inject;
@@ -24,4 +25,5 @@ public abstract class AppDatabase extends RoomDatabase {
 //    }
 
     public abstract PendingTodoListDao pendingTodoListDao();
+    public abstract SaveDetailDao saveDetailDao();
 }

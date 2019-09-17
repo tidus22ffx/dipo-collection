@@ -109,10 +109,17 @@ public class ToDoDetailsActivity extends AppCompatActivity {
             }
         });
 
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDoViewModel.saveInputToDB();
+            }
+        });
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toDoViewModel.saveToDatabase();
+                toDoViewModel.saveToPendingDatabase();
             }
         });
     }
@@ -258,7 +265,17 @@ public class ToDoDetailsActivity extends AppCompatActivity {
             }
         });
 
-        toDoViewModel.getSavedTodoItem().observe(this, new Observer<TodoItem>() {
+        toDoViewModel.getSavedPendingTodoItem().observe(this, new Observer<TodoItem>() {
+            @Override
+            public void onChanged(TodoItem todoItem) {
+                if(todoItem != null){
+                    buildSaveDialog(todoItem);
+                    saveCompletedDialog.show();
+                }
+            }
+        });
+
+        toDoViewModel.getSavedInputTodoItem().observe(this, new Observer<TodoItem>() {
             @Override
             public void onChanged(TodoItem todoItem) {
                 if(todoItem != null){

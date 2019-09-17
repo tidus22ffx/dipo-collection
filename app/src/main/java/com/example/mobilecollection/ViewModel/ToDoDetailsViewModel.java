@@ -23,10 +23,11 @@ import io.reactivex.schedulers.Schedulers;
 public class ToDoDetailsViewModel extends ViewModel {
     @Inject
     ApiService service;
-    private AppDatabase db;
+    AppDatabase db;
 
     MutableLiveData<TodoItem> todoItemDetail = new MutableLiveData<>();
-    MutableLiveData<TodoItem> savedTodoItem = new MutableLiveData<>();
+    MutableLiveData<TodoItem> savedPendingTodoItem = new MutableLiveData<>();
+    MutableLiveData<TodoItem> savedInputTodoItem = new MutableLiveData<>();
     MutableLiveData<Boolean> saveLoading = new MutableLiveData<>();
     MutableLiveData<Boolean> saveError = new MutableLiveData<>();
     MutableLiveData<String> saveErrorMessage = new MutableLiveData<>();
@@ -53,8 +54,12 @@ public class ToDoDetailsViewModel extends ViewModel {
         return todoItemDetail;
     }
 
-    public MutableLiveData<TodoItem> getSavedTodoItem() {
-        return savedTodoItem;
+    public MutableLiveData<TodoItem> getSavedPendingTodoItem() {
+        return savedPendingTodoItem;
+    }
+
+    public MutableLiveData<TodoItem> getSavedInputTodoItem() {
+        return savedInputTodoItem;
     }
 
     public MutableLiveData<Boolean> getSaveLoading() {
@@ -71,30 +76,46 @@ public class ToDoDetailsViewModel extends ViewModel {
 
     CompositeDisposable disposable = new CompositeDisposable();
 
-    public void fetchDetail(int id) {
+    public void fetchDetail(final int id) {
         loading.setValue(true);
         disposable.add(
-                service.getToDoDetails(id)
+                db.saveDetailDao()
+                        .getSaveDetail(id)
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribeWith(new DisposableSingleObserver<TodoItem>() {
+                        .subscribeWith(new DisposableSingleObserver<TodoItem>(){
+
                             @Override
-                            public void onSuccess(TodoItem value) {
-                                todoItemDetail.setValue(value);
-                                loading.setValue(false);
+                            public void onSuccess(TodoItem todoItem) {
+                                saveLoading.setValue(false);
+                                todoItemDetail.setValue(todoItem);
                             }
 
                             @Override
                             public void onError(Throwable e) {
-                                loading.setValue(false);
-                                isError.setValue(true);
-                                errorMessage.setValue(e.toString());
+                                service.getToDoDetails(id)
+                                        .subscribeOn(Schedulers.newThread())
+                                        .observeOn(AndroidSchedulers.mainThread())
+                                        .subscribeWith(new DisposableSingleObserver<TodoItem>() {
+                                            @Override
+                                            public void onSuccess(TodoItem value) {
+                                                todoItemDetail.setValue(value);
+                                                loading.setValue(false);
+                                            }
+
+                                            @Override
+                                            public void onError(Throwable e) {
+                                                loading.setValue(false);
+                                                isError.setValue(true);
+                                                errorMessage.setValue(e.toString());
+                                            }
+                                        });
                             }
                         })
         );
     }
 
-    public void saveToDatabase(){
+    public void saveToPendingDatabase(){
         saveLoading.setValue(true);
         disposable.add(
                 db.pendingTodoListDao()
@@ -106,7 +127,32 @@ public class ToDoDetailsViewModel extends ViewModel {
                             @Override
                             public void onComplete() {
                                 saveLoading.setValue(false);
-                                savedTodoItem.setValue(todoItemDetail.getValue());
+                                savedPendingTodoItem.setValue(todoItemDetail.getValue());
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                saveLoading.setValue(false);
+                                saveError.setValue(true);
+                                saveErrorMessage.setValue(e.toString());
+                            }
+                        })
+        );
+    }
+
+    public void saveInputToDB() {
+        saveLoading.setValue(true);
+        disposable.add(
+                db.saveDetailDao()
+                        .insert(todoItemDetail.getValue())
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeWith(new DisposableCompletableObserver(){
+
+                            @Override
+                            public void onComplete() {
+                                saveLoading.setValue(false);
+                                savedInputTodoItem.setValue(todoItemDetail.getValue());
                             }
 
                             @Override

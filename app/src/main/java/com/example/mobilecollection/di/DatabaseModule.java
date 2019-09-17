@@ -3,6 +3,8 @@ import android.app.Application;
 import androidx.room.Room;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.DB.DAO.PendingTodoListDao;
+import com.example.mobilecollection.Repository.DB.DAO.SaveDetailDao;
+
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
@@ -26,5 +28,11 @@ public class DatabaseModule {
     @Provides
     PendingTodoListDao providePendingDao(AppDatabase database){
         return database.pendingTodoListDao();
+    }
+
+    @Singleton
+    @Provides
+    SaveDetailDao provideSaveDetailDao(AppDatabase database){
+        return database.saveDetailDao();
     }
 }
