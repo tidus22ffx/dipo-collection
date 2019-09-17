@@ -1,12 +1,18 @@
 package com.example.mobilecollection.ViewModel;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.Model.TodoItem;
+import com.example.mobilecollection.di.ApiComponent;
 import com.example.mobilecollection.di.DaggerApiComponent;
+import com.example.mobilecollection.di.DatabaseModule;
 
 import javax.inject.Inject;
 
@@ -16,9 +22,10 @@ import io.reactivex.observers.DisposableCompletableObserver;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class ToDoDetailsViewModel extends ViewModel {
+public class ToDoDetailsViewModel extends AndroidViewModel {
     @Inject
     ApiService service;
+    @Inject
     AppDatabase db;
 
     MutableLiveData<TodoItem> todoItemDetail = new MutableLiveData<>();
@@ -31,8 +38,13 @@ public class ToDoDetailsViewModel extends ViewModel {
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
 
-    public ToDoDetailsViewModel() {
-        this.service = DaggerApiComponent.builder().build().service();
+    public ToDoDetailsViewModel(@NonNull Application application) {
+        super(application);
+//        db = AppDatabase.getDatabase(application);
+        ApiComponent component = DaggerApiComponent.builder()
+                .databaseModule(new DatabaseModule(application)).build();
+        this.service = component.service();
+        db = component.appDatabase();
     }
 
     public MutableLiveData<Boolean> getLoading() {
@@ -75,37 +87,21 @@ public class ToDoDetailsViewModel extends ViewModel {
     public void fetchDetail(final int id) {
         loading.setValue(true);
         disposable.add(
-                db.saveDetailDao()
-                        .getSaveDetail(id)
+                service.getToDoDetails(id)
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribeWith(new DisposableSingleObserver<TodoItem>(){
-
+                        .subscribeWith(new DisposableSingleObserver<TodoItem>() {
                             @Override
-                            public void onSuccess(TodoItem todoItem) {
-                                saveLoading.setValue(false);
-                                todoItemDetail.setValue(todoItem);
+                            public void onSuccess(TodoItem value) {
+                                todoItemDetail.setValue(value);
+                                loading.setValue(false);
                             }
 
                             @Override
                             public void onError(Throwable e) {
-                                service.getToDoDetails(id)
-                                        .subscribeOn(Schedulers.newThread())
-                                        .observeOn(AndroidSchedulers.mainThread())
-                                        .subscribeWith(new DisposableSingleObserver<TodoItem>() {
-                                            @Override
-                                            public void onSuccess(TodoItem value) {
-                                                todoItemDetail.setValue(value);
-                                                loading.setValue(false);
-                                            }
-
-                                            @Override
-                                            public void onError(Throwable e) {
-                                                loading.setValue(false);
-                                                isError.setValue(true);
-                                                errorMessage.setValue(e.toString());
-                                            }
-                                        });
+                                loading.setValue(false);
+                                isError.setValue(true);
+                                errorMessage.setValue(e.toString());
                             }
                         })
         );
@@ -113,9 +109,12 @@ public class ToDoDetailsViewModel extends ViewModel {
 
     public void saveToPendingDatabase(){
         saveLoading.setValue(true);
+        TodoItem data = todoItemDetail.getValue();
+        data.setTodoStatus("Pending");
+
         disposable.add(
                 db.todoListDao()
-                        .insert(todoItemDetail.getValue())
+                        .insert(data)
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeWith(new DisposableCompletableObserver(){
@@ -136,30 +135,30 @@ public class ToDoDetailsViewModel extends ViewModel {
         );
     }
 
-    public void saveInputToDB() {
-        saveLoading.setValue(true);
-        disposable.add(
-                db.saveDetailDao()
-                        .insert(todoItemDetail.getValue())
-                        .subscribeOn(Schedulers.newThread())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribeWith(new DisposableCompletableObserver(){
-
-                            @Override
-                            public void onComplete() {
-                                saveLoading.setValue(false);
-                                savedInputTodoItem.setValue(todoItemDetail.getValue());
-                            }
-
-                            @Override
-                            public void onError(Throwable e) {
-                                saveLoading.setValue(false);
-                                saveError.setValue(true);
-                                saveErrorMessage.setValue(e.toString());
-                            }
-                        })
-        );
-    }
+//    public void saveInputToDB() {
+//        saveLoading.setValue(true);
+//        disposable.add(
+//                db.saveDetailDao()
+//                        .insert(todoItemDetail.getValue())
+//                        .subscribeOn(Schedulers.newThread())
+//                        .observeOn(AndroidSchedulers.mainThread())
+//                        .subscribeWith(new DisposableCompletableObserver(){
+//
+//                            @Override
+//                            public void onComplete() {
+//                                saveLoading.setValue(false);
+//                                savedInputTodoItem.setValue(todoItemDetail.getValue());
+//                            }
+//
+//                            @Override
+//                            public void onError(Throwable e) {
+//                                saveLoading.setValue(false);
+//                                saveError.setValue(true);
+//                                saveErrorMessage.setValue(e.toString());
+//                            }
+//                        })
+//        );
+//    }
 
     @Override
     protected void onCleared() {

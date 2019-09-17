@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableMaybeObserver;
+import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class PendingDetailsViewModel extends AndroidViewModel {
@@ -57,7 +58,7 @@ public class PendingDetailsViewModel extends AndroidViewModel {
             .getPendingDetail(id)
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribeWith(new DisposableMaybeObserver<TodoItem>() {
+            .subscribeWith(new DisposableSingleObserver<TodoItem>() {
                 @Override
                 public void onSuccess(TodoItem todoItem) {
                     todoDetail.setValue(todoItem);
@@ -71,12 +72,6 @@ public class PendingDetailsViewModel extends AndroidViewModel {
                     loading.setValue(false);
                     isError.setValue(true);
                     errorMessage.setValue(e.toString());
-                }
-
-                @Override
-                public void onComplete() {
-                    loading.setValue(false);
-                    isError.setValue(false);
                 }
             })
         );

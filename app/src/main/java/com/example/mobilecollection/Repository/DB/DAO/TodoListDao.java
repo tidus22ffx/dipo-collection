@@ -14,6 +14,7 @@ import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.Maybe;
+import io.reactivex.Single;
 
 @Dao
 public interface TodoListDao {
@@ -22,7 +23,7 @@ public interface TodoListDao {
     Maybe<List<TodoItem>> getAllTodoItem();
 
     @Query("SELECT * FROM TodoItem WHERE id = :id")
-    Maybe<TodoItem> getPendingDetail(int id);
+    Single<TodoItem> getPendingDetail(int id);
 
     @Query("SELECT * FROM TodoItem WHERE todoStatus = :status")
     Maybe<List<TodoItem>> getListTodoItemByStatus(String status);

@@ -30,10 +30,4 @@ public class DatabaseModule {
     static TodoListDao providePendingDao(AppDatabase database){
         return database.todoListDao();
     }
-
-    @Singleton
-    @Provides
-    SaveDetailDao provideSaveDetailDao(AppDatabase database){
-        return database.saveDetailDao();
-    }
 }

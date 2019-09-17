@@ -109,12 +109,12 @@ public class ToDoDetailsActivity extends AppCompatActivity {
             }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toDoViewModel.saveInputToDB();
-            }
-        });
+//        save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                toDoViewModel.saveInputToDB();
+//            }
+//        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

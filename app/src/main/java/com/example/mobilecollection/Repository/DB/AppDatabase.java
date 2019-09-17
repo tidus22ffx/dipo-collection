@@ -21,7 +21,6 @@ public abstract class AppDatabase extends RoomDatabase {
 //        return instance;
 //    }
 
-    public abstract SaveDetailDao saveDetailDao();
     public abstract TodoListDao todoListDao();
 
     public static final Migration MIGRATION_1_2 = new Migration(1, 2) {
