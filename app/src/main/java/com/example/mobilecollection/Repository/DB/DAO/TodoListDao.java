@@ -3,6 +3,7 @@ package com.example.mobilecollection.Repository.DB.DAO;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -15,15 +16,18 @@ import io.reactivex.Completable;
 import io.reactivex.Maybe;
 
 @Dao
-public interface PendingTodoListDao {
+public interface TodoListDao {
 
     @Query("SELECT * FROM TodoItem")
-    Maybe<List<TodoItem>> getPendingList();
+    Maybe<List<TodoItem>> getAllTodoItem();
 
     @Query("SELECT * FROM TodoItem WHERE id = :id")
     Maybe<TodoItem> getPendingDetail(int id);
 
-    @Insert
+    @Query("SELECT * FROM TodoItem WHERE todoStatus = :status")
+    Maybe<List<TodoItem>> getListTodoItemByStatus(String status);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     Completable insert(TodoItem... items);
 
     @Update

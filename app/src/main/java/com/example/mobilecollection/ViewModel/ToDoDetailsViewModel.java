@@ -1,9 +1,5 @@
 package com.example.mobilecollection.ViewModel;
 
-import android.app.Application;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -97,7 +93,7 @@ public class ToDoDetailsViewModel extends ViewModel {
     public void saveToDatabase(){
         saveLoading.setValue(true);
         disposable.add(
-                db.pendingTodoListDao()
+                db.todoListDao()
                         .insert(todoItemDetail.getValue())
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())

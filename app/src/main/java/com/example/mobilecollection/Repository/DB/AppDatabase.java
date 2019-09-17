@@ -1,17 +1,14 @@
 package com.example.mobilecollection.Repository.DB;
 
-import android.content.Context;
-
 import androidx.room.Database;
-import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.migration.Migration;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.mobilecollection.Repository.DB.DAO.PendingTodoListDao;
+import com.example.mobilecollection.Repository.DB.DAO.TodoListDao;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 
-import javax.inject.Inject;
-
-@Database(entities = {TodoItem.class}, version = 1)
+@Database(entities = {TodoItem.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instance;
@@ -23,5 +20,15 @@ public abstract class AppDatabase extends RoomDatabase {
 //        return instance;
 //    }
 
-    public abstract PendingTodoListDao pendingTodoListDao();
+    public abstract TodoListDao todoListDao();
+
+    public static final Migration MIGRATION_1_2 = new Migration(1, 2) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
+            database.execSQL("ALTER TABLE `TodoItem` "
+                    + "ADD COLUMN todoStatus VARCHAR(20)");
+            database.execSQL("UPDATE `TodoItem` "
+                    + "SET todoStatus = `Pending`");
+        }
+    };
 }
