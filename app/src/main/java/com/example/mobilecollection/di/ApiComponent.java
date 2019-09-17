@@ -1,15 +1,9 @@
 package com.example.mobilecollection.di;
 
-import android.content.Context;
-
 import com.example.mobilecollection.Repository.API.Api;
 import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
-import com.example.mobilecollection.Repository.DB.DAO.PendingTodoListDao;
-import com.example.mobilecollection.ViewModel.DeliveredDetailsViewModel;
-import com.example.mobilecollection.ViewModel.DeliveredViewModel;
-import com.example.mobilecollection.ViewModel.PendingViewModel;
-import com.example.mobilecollection.ViewModel.ToDoViewModel;
+import com.example.mobilecollection.Repository.DB.DAO.TodoListDao;
 
 import javax.inject.Singleton;
 
@@ -33,4 +27,5 @@ public interface ApiComponent {
     ApiService service();
     Api api();
     AppDatabase appDatabase();
+    TodoListDao dao();
 }

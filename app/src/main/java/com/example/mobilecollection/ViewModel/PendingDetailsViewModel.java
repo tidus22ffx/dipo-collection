@@ -53,7 +53,7 @@ public class PendingDetailsViewModel extends AndroidViewModel {
 
     public void fetchDetails(int id) {
         disposable.add(
-            db.pendingTodoListDao()
+            db.todoListDao()
             .getPendingDetail(id)
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())

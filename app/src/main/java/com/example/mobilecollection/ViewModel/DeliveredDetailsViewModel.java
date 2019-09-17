@@ -1,15 +1,14 @@
 package com.example.mobilecollection.ViewModel;
 
 import android.app.Application;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.room.Room;
 
 import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
+import com.example.mobilecollection.Repository.DB.DAO.TodoListDao;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.di.ApiComponent;
 import com.example.mobilecollection.di.DaggerApiComponent;
@@ -29,7 +28,7 @@ public class DeliveredDetailsViewModel extends AndroidViewModel {
     ApiService service;
 
     @Inject
-    AppDatabase db;
+    TodoListDao dao;
 
     MutableLiveData<TodoItem> todoDetail = new MutableLiveData<>();
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
@@ -46,7 +45,7 @@ public class DeliveredDetailsViewModel extends AndroidViewModel {
         ApiComponent component = DaggerApiComponent.builder()
                 .databaseModule(new DatabaseModule(application)).build();
         this.service = component.service();
-        db = component.appDatabase();
+        dao = component.dao();
     }
 
     public MutableLiveData<Boolean> getLoading() {
@@ -111,9 +110,13 @@ public class DeliveredDetailsViewModel extends AndroidViewModel {
 
     public void saveToDatabase(){
         saveLoading.setValue(true);
+
+        TodoItem data = todoDetail.getValue();
+        data.setTodoStatus("Pending");
+
         disposable.add(
-            db.pendingTodoListDao()
-            .insert(todoDetail.getValue())
+            dao
+            .insert(data)
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(new DisposableCompletableObserver(){

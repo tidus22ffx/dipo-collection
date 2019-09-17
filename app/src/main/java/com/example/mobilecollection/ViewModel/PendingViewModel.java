@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
+import com.example.mobilecollection.Repository.DB.DAO.TodoListDao;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.di.DaggerApiComponent;
 import com.example.mobilecollection.di.DatabaseModule;
@@ -15,7 +16,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import dagger.Component;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableMaybeObserver;
@@ -24,12 +24,12 @@ import io.reactivex.schedulers.Schedulers;
 public class PendingViewModel extends AndroidViewModel {
 
     @Inject
-    AppDatabase db;
+    TodoListDao dao;
 
     public PendingViewModel(@NonNull Application application) {
         super(application);
-        db = DaggerApiComponent.builder().databaseModule(new DatabaseModule(application))
-                .build().appDatabase();
+        dao = DaggerApiComponent.builder().databaseModule(new DatabaseModule(application))
+                .build().dao();
 //        db = AppDatabase.getDatabase(application);
     }
 
@@ -63,8 +63,8 @@ public class PendingViewModel extends AndroidViewModel {
     private void fetchPendinglist(){
         loading.setValue(true);
         disposable.add(
-            db.pendingTodoListDao()
-            .getPendingList()
+            dao
+            .getListTodoItemByStatus("Pending")
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(new DisposableMaybeObserver<List<TodoItem>>() {

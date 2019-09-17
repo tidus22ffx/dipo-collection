@@ -131,6 +131,17 @@ public class TodoItem {
     @SerializedName("foto2")
     private String foto2;
 
+    @SerializedName("todoStatus")
+    private String todoStatus;
+
+    public String getTodoStatus() {
+        return todoStatus;
+    }
+
+    public void setTodoStatus(String todoStatus) {
+        this.todoStatus = todoStatus;
+    }
+
     public String getCurrentBalance() {
         return currentBalance;
     }

@@ -2,9 +2,8 @@ package com.example.mobilecollection.di;
 import android.app.Application;
 import androidx.room.Room;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
-import com.example.mobilecollection.Repository.DB.DAO.PendingTodoListDao;
 import com.example.mobilecollection.Repository.DB.DAO.SaveDetailDao;
-
+import com.example.mobilecollection.Repository.DB.DAO.TodoListDao;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
@@ -15,7 +14,9 @@ public class DatabaseModule {
     private static AppDatabase database;
 
     public DatabaseModule(Application application) {
-        database = Room.databaseBuilder(application, AppDatabase.class, "DipoDb").build();
+        database = Room.databaseBuilder(application, AppDatabase.class, "DipoDb")
+                .addMigrations(AppDatabase.MIGRATION_1_2)
+                .build();
     }
 
     @Singleton
@@ -26,8 +27,8 @@ public class DatabaseModule {
 
     @Singleton
     @Provides
-    PendingTodoListDao providePendingDao(AppDatabase database){
-        return database.pendingTodoListDao();
+    static TodoListDao providePendingDao(AppDatabase database){
+        return database.todoListDao();
     }
 
     @Singleton
