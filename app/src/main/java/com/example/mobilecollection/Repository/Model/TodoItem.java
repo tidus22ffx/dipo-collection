@@ -138,6 +138,15 @@ public class TodoItem {
         return todoStatus;
     }
 
+    public TodoItem(int id, String contractNo, String customerName, String orderDate, String plat, String todoStatus) {
+        this.id = id;
+        this.contractNo = contractNo;
+        this.customerName = customerName;
+        this.orderDate = orderDate;
+        this.plat = plat;
+        this.todoStatus = todoStatus;
+    }
+
     public void setTodoStatus(String todoStatus) {
         this.todoStatus = todoStatus;
     }
