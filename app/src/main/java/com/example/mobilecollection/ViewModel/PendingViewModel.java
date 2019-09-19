@@ -74,6 +74,7 @@ public class PendingViewModel extends AndroidViewModel {
                     loading.setValue(false);
                     ArrayList list = new ArrayList<TodoItem>();
                     list.addAll(todoItems);
+                    isError.setValue(false);
                     pendingList.setValue(list);
                 }
 

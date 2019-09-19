@@ -101,12 +101,7 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
 
         initializeView();
         initializeSpinner();
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewModel.saveToDatabase();
-            }
-        });
+        disableForm();
 
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
         toolbar.setTitleTextColor(Color.WHITE);
@@ -220,6 +215,7 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
         followupType.setSelection(todoItem.getFollowupType());
         visitResult.setSelection(todoItem.getVisitResult());
         kronologis.setText(todoItem.getKronologis());
+
         Glide.with(this)
             .setDefaultRequestOptions(new RequestOptions().placeholder(R.drawable.icon_camera))
             .load(todoItem.getFoto1()).into(foto1);
@@ -309,5 +305,48 @@ public class DeliveredDetailsActivity extends AppCompatActivity {
         submit = findViewById(R.id.detail_submit_button);
         fieldContainer = findViewById(R.id.detail_scroll);
         loading = findViewById(R.id.details_loader);
+    }
+
+    private void disableForm(){
+        hobAction.setEnabled(false);
+        namaCustomer.setEnabled(false);
+        noContract.setEnabled(false);
+        prioritas.setEnabled(false);
+        tglJatuhTempo.setEnabled(false);
+        overdue.setEnabled(false);
+        receivable.setEnabled(false);
+        totalPeriod.setEnabled(false);
+        paid.setEnabled(false);
+        unit.setEnabled(false);
+        brand.setEnabled(false);
+        currentUnit.setEnabled(false);
+        expiredDate.setEnabled(false);
+        status.setEnabled(false);
+        jumlahAngsuran.setEnabled(false);
+        balance.setEnabled(false);
+        bucket.setEnabled(false);
+        alamat.setEnabled(false);
+        telp.setEnabled(false);
+        mobile.setEnabled(false);
+        currentBalance.setEnabled(false);
+        ptp.setEnabled(false);
+        ptpDate.setEnabled(false);
+        ptpAmount.setEnabled(false);
+        remark.setEnabled(false);
+        alamatPerubahan.setEnabled(false);
+        telpPerubahan.setEnabled(false);
+        mobilePerubahan.setEnabled(false);
+        noPlat.setEnabled(false);
+        bertemuDengan.setEnabled(false);
+        prioritas.setEnabled(false);
+        statusAlamat.setEnabled(false);
+        statusTelp.setEnabled(false);
+        statusHp.setEnabled(false);
+        followupType.setEnabled(false);
+        visitResult.setEnabled(false);
+        kronologis.setEnabled(false);
+        submit.setEnabled(false);
+        save.setEnabled(false);
+        savePriority.setEnabled(false);
     }
 }

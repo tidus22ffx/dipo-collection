@@ -7,8 +7,10 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.mobilecollection.Repository.DB.AppDatabase;
+import com.example.mobilecollection.Repository.DB.DAO.TodoListDao;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.di.DaggerApiComponent;
+import com.example.mobilecollection.di.DatabaseModule;
 
 import javax.inject.Inject;
 
@@ -21,12 +23,12 @@ import io.reactivex.schedulers.Schedulers;
 public class PendingDetailsViewModel extends AndroidViewModel {
 
     @Inject
-    AppDatabase db;
+    TodoListDao dao;
 
     public PendingDetailsViewModel(@NonNull Application application) {
         super(application);
 //        db = AppDatabase.getDatabase(application);
-        db = DaggerApiComponent.builder().build().appDatabase();
+        dao = DaggerApiComponent.builder().databaseModule(new DatabaseModule(application)).build().dao();
     }
 
     MutableLiveData<TodoItem> todoDetail = new MutableLiveData<>();
@@ -54,7 +56,7 @@ public class PendingDetailsViewModel extends AndroidViewModel {
 
     public void fetchDetails(int id) {
         disposable.add(
-            db.todoListDao()
+            dao
             .getPendingDetail(id)
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
