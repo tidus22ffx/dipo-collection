@@ -890,13 +890,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/bertemu_spinner_layout">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/TextBold"
-                        android:text="Bertemu Dengan :" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextBold"
+                            android:text="Bertemu Dengan :" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Text"
+                            android:textColor="@color/colorPrimary"
+                            android:text=" *"/>
+                    </LinearLayout>
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -914,7 +927,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/statusAlamat_spinner_layout">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1134,7 +1148,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/statusHP_spinner_layout">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1214,7 +1229,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/statusTelp_spinner_layout">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1299,7 +1315,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:id="@+id/followUp_spinner_layout">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -1330,7 +1347,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="4dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/visitResult_spinner_layout">
 
                     <LinearLayout
                         android:layout_width="match_parent"
