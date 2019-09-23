@@ -1,5 +1,7 @@
 package com.example.mobilecollection.ViewModel;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -29,6 +31,7 @@ public class DeliveredViewModel extends ViewModel {
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
+    ArrayList<TodoItem> todoItems;
 
     public MutableLiveData<ArrayList<TodoItem>> getTodoList() {
         return todoList;
@@ -50,6 +53,26 @@ public class DeliveredViewModel extends ViewModel {
 
     public void refreshDeliveredList(){
         fetchTodolist();
+    }
+
+    public MutableLiveData<ArrayList<TodoItem>> filterList(String param) {
+        ArrayList<TodoItem> todoItemsFiltered = new ArrayList<>();
+        Log.d("ITEMS", "TODOITEMS: "+todoItems);
+        if (param.isEmpty() || param.equalsIgnoreCase("")) {
+            todoList.setValue(todoItems);
+            return todoList;
+        } else {
+            String filterPattern = param.toLowerCase().trim();
+
+            for (TodoItem item : todoItems) {
+                if (item.getContractNo().toLowerCase().contains(filterPattern)
+                        || item.getPlat().toLowerCase().contains(filterPattern)){
+                    todoItemsFiltered.add(item);
+                }
+            }
+            todoList.setValue(todoItemsFiltered);
+            return todoList;
+        }
     }
 
     private void fetchTodolist(){

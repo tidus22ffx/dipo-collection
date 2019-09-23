@@ -1,6 +1,7 @@
 package com.example.mobilecollection.ViewModel;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -37,6 +38,27 @@ public class PendingViewModel extends AndroidViewModel {
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
+    ArrayList<TodoItem> todoItems;
+
+    public MutableLiveData<ArrayList<TodoItem>> filterList(String param) {
+        ArrayList<TodoItem> todoItemsFiltered = new ArrayList<>();
+        Log.d("ITEMS", "TODOITEMS: "+todoItems);
+        if (param.isEmpty() || param.equalsIgnoreCase("")) {
+            pendingList.setValue(todoItems);
+            return pendingList;
+        } else {
+            String filterPattern = param.toLowerCase().trim();
+
+            for (TodoItem item : todoItems) {
+                if (item.getContractNo().toLowerCase().contains(filterPattern)
+                        || item.getPlat().toLowerCase().contains(filterPattern)){
+                    todoItemsFiltered.add(item);
+                }
+            }
+            pendingList.setValue(todoItemsFiltered);
+            return pendingList;
+        }
+    }
 
     public MutableLiveData<ArrayList<TodoItem>> getPendingList() {
         return pendingList;

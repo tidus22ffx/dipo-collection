@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class DeliveredActivity extends AppCompatActivity implements DeliveredRec
     DeliveredViewModel deliveredViewModel;
     ProgressBar loading;
     TextView errorMessage;
+    SearchView searchView;
 
     private DeliveredRecyclerAdapter adapter = new DeliveredRecyclerAdapter(new ArrayList<TodoItem>());
 
@@ -40,6 +42,7 @@ public class DeliveredActivity extends AppCompatActivity implements DeliveredRec
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         TextView textView = findViewById(R.id.toolbar_text);
+        searchView = findViewById(R.id.delivered_search);
         textView.setText("Data Delivered");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
         toolbar.setTitleTextColor(Color.WHITE);
@@ -60,6 +63,21 @@ public class DeliveredActivity extends AppCompatActivity implements DeliveredRec
             public void onRefresh() {
                 swipeRefreshLayout.setRefreshing(false);
                 deliveredViewModel.refreshDeliveredList();
+            }
+        });
+
+        searchView.setOnClickListener(v -> searchView.setIconified(false));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                deliveredViewModel.filterList(newText);
+                return false;
             }
         });
 

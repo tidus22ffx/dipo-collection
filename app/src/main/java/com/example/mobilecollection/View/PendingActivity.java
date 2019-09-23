@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.mobilecollection.Adapter.PendingRecyclerAdapter;
@@ -29,6 +30,7 @@ public class PendingActivity extends AppCompatActivity implements PendingRecycle
     PendingViewModel pendingViewModel;
     ProgressBar loading;
     TextView errorMessage;
+    SearchView searchBar;
 
     private PendingRecyclerAdapter adapter = new PendingRecyclerAdapter(new ArrayList<TodoItem>());
 
@@ -39,6 +41,8 @@ public class PendingActivity extends AppCompatActivity implements PendingRecycle
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         TextView textView = findViewById(R.id.toolbar_text);
+        searchBar = findViewById(R.id.pending_search);
+
         textView.setText("Data Pending");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
         toolbar.setTitleTextColor(Color.WHITE);
@@ -60,6 +64,21 @@ public class PendingActivity extends AppCompatActivity implements PendingRecycle
             public void onRefresh() {
                 swipeRefreshLayout.setRefreshing(false);
                 pendingViewModel.refreshPendingList();
+            }
+        });
+
+        searchBar.setOnClickListener(v -> searchBar.setIconified(false));
+
+        searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                pendingViewModel.filterList(newText);
+                return false;
             }
         });
 
