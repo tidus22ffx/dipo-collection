@@ -135,30 +135,33 @@ public class ToDoDetailsViewModel extends AndroidViewModel {
         );
     }
 
-//    public void saveInputToDB() {
-//        saveLoading.setValue(true);
-//        disposable.add(
-//                db.saveDetailDao()
-//                        .insert(todoItemDetail.getValue())
-//                        .subscribeOn(Schedulers.newThread())
-//                        .observeOn(AndroidSchedulers.mainThread())
-//                        .subscribeWith(new DisposableCompletableObserver(){
-//
-//                            @Override
-//                            public void onComplete() {
-//                                saveLoading.setValue(false);
-//                                savedInputTodoItem.setValue(todoItemDetail.getValue());
-//                            }
-//
-//                            @Override
-//                            public void onError(Throwable e) {
-//                                saveLoading.setValue(false);
-//                                saveError.setValue(true);
-//                                saveErrorMessage.setValue(e.toString());
-//                            }
-//                        })
-//        );
-//    }
+    public void saveInputToDB() {
+        saveLoading.setValue(true);
+        TodoItem data = todoItemDetail.getValue();
+        data.setTodoStatus("SaveInput");
+
+        disposable.add(
+                db.todoListDao()
+                        .insert(data)
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeWith(new DisposableCompletableObserver(){
+
+                            @Override
+                            public void onComplete() {
+                                saveLoading.setValue(false);
+                                savedInputTodoItem.setValue(todoItemDetail.getValue());
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                saveLoading.setValue(false);
+                                saveError.setValue(true);
+                                saveErrorMessage.setValue(e.toString());
+                            }
+                        })
+        );
+    }
 
     @Override
     protected void onCleared() {

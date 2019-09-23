@@ -62,7 +62,8 @@ public class ToDoDetailsActivity extends AppCompatActivity {
             expiredDate, currentStatus, bucket, alamat, mobile, telp, ptp, ptpDate,
             overdue, totalPeriod, uslPaid, unit, currentUnit, jumlahAngsuran, balance, currentBalance,
             ptpAmount, remarkAdmin, alamatPerubahan, telpPerubahan, mobilePerubahan, nopol;
-    LinearLayout alamatBaru, telpBaru, hpBaru, resultOtherBaru;
+    LinearLayout alamatBaru, telpBaru, hpBaru, resultOtherBaru, bertemuLayout, alamatLayout,
+            hpLayout, telpLayout, followUpLayout, visitResultLayout;
     EditText kronologi, newAlamat, newKelurahan, newKecamatan, newKodya, newKodePos, newHp, newTelp, newOther;
     Button submit, save;
     int id;
@@ -109,12 +110,16 @@ public class ToDoDetailsActivity extends AppCompatActivity {
             }
         });
 
-//        save.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = bertemu.getSelectedItem().toString();
+                String id = Long.toString(bertemu.getSelectedItemId());
+                scroll.smoothScrollTo(0, bertemuLayout.getTop());
+                Toast.makeText(ToDoDetailsActivity.this, "Duarr "+text+" "+id, Toast.LENGTH_SHORT).show();
 //                toDoViewModel.saveInputToDB();
-//            }
-//        });
+            }
+        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -226,6 +231,12 @@ public class ToDoDetailsActivity extends AppCompatActivity {
         foto2 = findViewById(R.id.foto2);
         submit = findViewById(R.id.detail_submit_button);
         save = findViewById(R.id.detail_save_button);
+        bertemuLayout = findViewById(R.id.bertemu_spinner_layout);
+        alamatLayout = findViewById(R.id.statusAlamat_spinner_layout);
+        hpLayout = findViewById(R.id.statusHP_spinner_layout);
+        telpLayout = findViewById(R.id.statusTelp_spinner_layout);
+        followUpLayout = findViewById(R.id.followUp_spinner_layout);
+        visitResultLayout = findViewById(R.id.visitResult_spinner_layout);
     }
 
 
