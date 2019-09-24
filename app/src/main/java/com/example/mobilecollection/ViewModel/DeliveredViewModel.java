@@ -10,6 +10,7 @@ import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.di.DaggerApiComponent;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -31,7 +32,7 @@ public class DeliveredViewModel extends ViewModel {
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
-    ArrayList<TodoItem> todoItems;
+    List<TodoItem> todoItems = new ArrayList<>();
 
     public MutableLiveData<ArrayList<TodoItem>> getTodoList() {
         return todoList;
@@ -57,9 +58,8 @@ public class DeliveredViewModel extends ViewModel {
 
     public MutableLiveData<ArrayList<TodoItem>> filterList(String param) {
         ArrayList<TodoItem> todoItemsFiltered = new ArrayList<>();
-        Log.d("ITEMS", "TODOITEMS: "+todoItems);
         if (param.isEmpty() || param.equalsIgnoreCase("")) {
-            todoList.setValue(todoItems);
+            todoList.setValue(new ArrayList<>(todoItems));
             return todoList;
         } else {
             String filterPattern = param.toLowerCase().trim();
@@ -84,6 +84,7 @@ public class DeliveredViewModel extends ViewModel {
             .subscribeWith(new DisposableSingleObserver<ArrayList<TodoItem>>() {
                 @Override
                 public void onSuccess(ArrayList<TodoItem> value) {
+                    todoItems.addAll(value);
                     todoList.setValue(value);
                     loading.setValue(false);
                     isError.setValue(false);
