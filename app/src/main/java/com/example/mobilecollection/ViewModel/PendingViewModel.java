@@ -38,25 +38,24 @@ public class PendingViewModel extends AndroidViewModel {
     MutableLiveData<Boolean> loading = new MutableLiveData<>();
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
     MutableLiveData<String> errorMessage = new MutableLiveData<>();
-    ArrayList<TodoItem> todoItems;
+    private List<TodoItem> todoListTemp;
 
-    public MutableLiveData<ArrayList<TodoItem>> filterList(String param) {
+    public void filterList(String param) {
         ArrayList<TodoItem> todoItemsFiltered = new ArrayList<>();
-        Log.d("ITEMS", "TODOITEMS: "+todoItems);
         if (param.isEmpty() || param.equalsIgnoreCase("")) {
-            pendingList.setValue(todoItems);
-            return pendingList;
+            pendingList.setValue(new ArrayList<>(todoListTemp));
+//            return pendingList;
         } else {
             String filterPattern = param.toLowerCase().trim();
 
-            for (TodoItem item : todoItems) {
+            for (TodoItem item : todoListTemp) {
                 if (item.getContractNo().toLowerCase().contains(filterPattern)
                         || item.getPlat().toLowerCase().contains(filterPattern)){
                     todoItemsFiltered.add(item);
                 }
             }
             pendingList.setValue(todoItemsFiltered);
-            return pendingList;
+//            return pendingList;
         }
     }
 
@@ -94,6 +93,7 @@ public class PendingViewModel extends AndroidViewModel {
                 @Override
                 public void onSuccess(List<TodoItem> todoItems) {
                     loading.setValue(false);
+                    todoListTemp = todoItems;
                     ArrayList list = new ArrayList<TodoItem>();
                     list.addAll(todoItems);
                     isError.setValue(false);
@@ -119,5 +119,6 @@ public class PendingViewModel extends AndroidViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
+        disposable.clear();
     }
 }

@@ -11,8 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,10 +27,18 @@ import com.example.mobilecollection.Adapter.HomeAdapter;
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.HomeMenu;
 import com.example.mobilecollection.ViewModel.HomeViewModel;
+import com.example.mobilecollection.utilities.GPSTrackerService;
+import com.example.mobilecollection.utilities.Utilities;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class HomeActivity extends AppCompatActivity implements HomeAdapter.Listener {
+
+    GPSTrackerService gpsservice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +53,8 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.Liste
         setSupportActionBar(toolbar);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        gpsservice = new GPSTrackerService(0, 10, TimeUnit.SECONDS, this);
+        gpsservice.start();
 
         HomeViewModel model = ViewModelProviders.of(this).get(HomeViewModel.class);
         model.getmHomeMenu().observe(this, new Observer<List<HomeMenu>>() {
@@ -52,6 +65,12 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.Liste
                 recyclerView.setAdapter(adapter);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        gpsservice.stop();
     }
 
     @Override
@@ -103,6 +122,16 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.Liste
     private void gotoProfile() {
         Intent intent = new Intent(HomeActivity.this, ChangePasswordActivity.class);
         startActivity(intent);
+    }
+
+    private void getLocation(){
+        double longitude;
+        double latitude;
+        Location location = Utilities.getCurrentLocation(this);
+        longitude = location.getLongitude();
+        latitude = location.getLatitude();
+//        Toast.makeText(this, "Longitude: " + longitude + ", Latitude: " + latitude, Toast.LENGTH_LONG ).show();
+        Log.e("timer", "Longitude: " + longitude + ", Latitude: " + latitude);
     }
 
     @Override

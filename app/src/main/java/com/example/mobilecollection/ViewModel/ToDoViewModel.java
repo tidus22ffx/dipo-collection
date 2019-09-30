@@ -45,9 +45,9 @@ public class ToDoViewModel extends ViewModel {
 
     public MutableLiveData<ArrayList<TodoItem>> filterList(String param) {
         ArrayList<TodoItem> todoItemsFiltered = new ArrayList<>();
-        Log.d("ITEMS", "TODOITEMS: "+todoItems);
+//        Log.d("ITEMS", "TODOITEMS: "+todoItems);
         if (param.isEmpty() || param.equalsIgnoreCase("")) {
-            todoList.setValue(todoItems);
+            todoList.setValue(new ArrayList<>(todoItems));
             return todoList;
         } else {
             String filterPattern = param.toLowerCase().trim();

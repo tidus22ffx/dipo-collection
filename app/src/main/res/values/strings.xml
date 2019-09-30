@@ -8,6 +8,9 @@
     <string name="prioritas_prompt">Pilih Prioritas</string>
     <string name="pending_dialog">Save data pending</string>
     <string name="ok_button">OK</string>
+    <string name="title_location_permission">Izinkan Akses GPS</string>
+    <string name="text_location_permission">Untuk dapat mengakses aplikasi ini, anda perlu mengizinkan akses ke GPS perangkat.</string>
+    <string name="ok">Setuju</string>
 
     <string-array name="prioritas_arrays">
         <item>Tinggi</item>
