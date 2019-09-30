@@ -1,6 +1,10 @@
 package com.example.mobilecollection.ViewModel;
 
 import android.app.Application;
+import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -10,6 +14,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.DB.AppDatabase;
 import com.example.mobilecollection.Repository.Model.TodoItem;
+import com.example.mobilecollection.View.ToDoDetailsActivity;
 import com.example.mobilecollection.di.ApiComponent;
 import com.example.mobilecollection.di.DaggerApiComponent;
 import com.example.mobilecollection.di.DatabaseModule;
