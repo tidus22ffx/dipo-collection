@@ -16,10 +16,10 @@ public class HomeViewModel extends ViewModel {
     };
 
     private int[] imgList = {
-                R.drawable.todo_list,
-                R.drawable.pending_list,
-                R.drawable.done_list,
-                R.drawable.settings
+                R.drawable.menu_to_dolist,
+                R.drawable.menu_pending_list,
+                R.drawable.menu_deliveredlist,
+                R.drawable.menu_setting
     };
 
     private String[] descList = {

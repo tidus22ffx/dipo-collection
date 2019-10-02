@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:paddingHorizontal="32dp"
         android:paddingTop="56dp"
         android:paddingBottom="0dp"
@@ -27,6 +27,7 @@
     <TextView
         android:id="@+id/app_name"
         style="@style/TitleText"
+        android:textColor="#262526"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -34,13 +35,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="32dp"
         android:gravity="center"
         android:paddingLeft="12dp"
         android:paddingTop="12dp"
         android:paddingRight="12dp"
         android:paddingBottom="12dp"
-        android:text="GPS Tracking System (Collection)"
+        android:text="GPS TRACKING SYSTEM\n(COLLECTION)"
         app:layout_constraintBottom_toTopOf="@+id/login_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -51,128 +52,152 @@
         app:layout_constraintVertical_weight="10" />
 
     <LinearLayout
-        android:id="@+id/login_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center"
         android:orientation="vertical"
-        android:paddingHorizontal="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_layout"
+        android:id="@+id/login_layout"
+        android:background="@drawable/login_container"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/app_name"
-        app:layout_constraintVertical_weight="25">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:background="@drawable/login_input_background"
-            android:padding="0dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_user"
-                android:layout_weight="1" />
-
-            <EditText
-                android:id="@+id/username_field"
-                android:background="@null"
-                android:layout_width="0dp"
-                android:layout_weight="10"
-                android:layout_height="wrap_content"
-                style="@style/RegularText"
-                android:hint="Username"
-                android:textColorHint="@color/login_secondary"
-                android:layout_margin="10dp"
-                android:padding="10dp"/>
-        </LinearLayout>
+        app:layout_constraintVertical_weight="55    ">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:background="@drawable/login_input_background"
-            android:padding="0dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:layout_weight="35">
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_key"
-                android:layout_weight="1" />
 
-            <EditText
-                android:id="@+id/password_field"
-                android:background="@null"
-                android:layout_width="0dp"
-                android:layout_weight="10"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/RegularText"
-                android:hint="Password"
-                android:layout_margin="10dp"
-                android:textColorHint="@color/login_secondary"
-                android:inputType="textPassword"
-                android:padding="10dp"/>
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginVertical="12dp"
+                android:background="@drawable/login_input_background"
+                android:paddingHorizontal="15dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_user"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/username_field"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_weight="9"
+                    android:layout_height="wrap_content"
+                    style="@style/PlaceholderText"
+                    android:hint="Username"
+                    android:textColorHint="@color/placeholderColor"
+                    android:layout_margin="2dp"
+                    android:padding="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginVertical="12dp"
+                android:background="@drawable/login_input_background"
+                android:paddingHorizontal="15dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_key"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/password_field"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:layout_height="wrap_content"
+                    style="@style/PlaceholderText"
+                    android:hint="Password"
+                    android:layout_margin="2dp"
+                    android:textColorHint="@color/placeholderColor"
+                    android:inputType="textPassword"
+                    android:padding="8dp"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_view"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/button_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_layout"
-        android:orientation="vertical"
-        app:layout_constraintVertical_weight="35">
+        <LinearLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="35">
 
+            <TextView
+                android:id="@+id/error_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/LatoTextSmall"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:text="Error"/>
+
+            <Button
+                android:id="@+id/signin_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ButtonText"
+                android:textColor="@color/white"
+                android:paddingVertical="8dp"
+                android:elevation="100dp"
+                android:layout_marginHorizontal="60dp"
+                android:textAllCaps="false"
+                android:background="@drawable/button_transparent"
+                android:text="Sign In" />
+
+            <ProgressBar
+                android:id="@+id/activity_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="64dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                style="@style/RobotoTextBold"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:text="Forgot Password"/>
+        </LinearLayout>
         <TextView
-            android:id="@+id/error_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/SmallText"
-            android:textColor="@color/colorPrimary"
-            android:gravity="center_horizontal"
-            android:text="Error"/>
-
-        <Button
-            android:id="@+id/signin_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/ButtonText"
-            android:paddingVertical="16dp"
-            android:layout_marginHorizontal="64dp"
-            android:background="@drawable/button_transparent"
-            android:text="Sign In" />
-
-        <ProgressBar
-            android:id="@+id/activity_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingVertical="5dp"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="64dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            style="@style/SmallText"
-            android:textColor="@color/login_secondary"
-            android:gravity="center_horizontal"
-            android:text="Forgot Password"/>
+            android:textAlignment="center"
+            android:layout_marginVertical="8dp"
+            style="@style/LatoTextSmall"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="Copyright © 2019 by PT. Indocyber Global Teknologi"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

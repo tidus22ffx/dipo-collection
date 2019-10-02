@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#FFFFFF</color>
+    <color name="redGradientLight">#E2191B</color>
+    <color name="redGradientDark">#C80608</color>
+    <color name="placeholderColor">#BEB9B9</color>
+    <color name="buttonRed">#FE0406</color>
     <color name="colorPrimary">#E30613</color>
     <color name="colorPrimaryDark">#B1050F</color>
     <color name="colorAccent">#D81B60</color>
@@ -7,7 +12,7 @@
     <color name="title_color">#1C1C2F</color>
     <color name="login_secondary">#1C1C2F</color>
     <color name="gradient_top">#f0f0f0</color>
-    <color name="gradient_bottom">#cccccc</color>
+    <color name="white_slight_dark">#cccccc</color>
     <color name="backgroundcolor">#fcfcfc</color>
     <color name="lightgray">#ededed</color>
     <color name="deeppurple">#7c4dff</color>
@@ -18,4 +23,5 @@
     <color name="pink">#fe104d</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="transparent_white">#00000000</color>
 </resources>

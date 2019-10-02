@@ -6,22 +6,22 @@
     android:layout_height="wrap_content"
     tools:context=".View.HomeActivity"
     android:padding="10dp"
-    android:background="#fcfcfc"
+    android:background="@color/transparent_white"
     android:clipToPadding="false"
     android:gravity="center"
     android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
-        android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:id="@+id/cvItem"
         android:layout_width="160dp"
-        android:layout_height="190dp"
-        android:layout_margin="10dp">
+        app:cardCornerRadius="20dp"
+        android:layout_height="190dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/home_menu_background"
             android:orientation="vertical"
             android:padding="5dp">
 
@@ -43,17 +43,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/titleItem"
-                    android:textStyle="bold"
+                    style="@style/LatoTextBold"
                     android:layout_marginTop="10dp"
                     android:text="To Do List"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@color/white"/>
 
             </LinearLayout>
 
             <View
-                android:layout_width="match_parent"
+                android:layout_width="32dp"
+                android:layout_gravity="center"
                 android:layout_height="1dp"
-                android:background="@color/black_overlay"
+                android:background="@color/white"
                 android:layout_margin="5dp"/>
 
             <LinearLayout
@@ -68,9 +69,10 @@
                     android:gravity="center"
                     android:text="Contains list of contract
                         that has been added by Admin Collection"
+                    style="@style/LatoTextItalic"
                     android:textSize="11sp"
                     android:padding="5dp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="@color/white"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

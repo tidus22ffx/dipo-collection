@@ -46,11 +46,11 @@ public class HomeActivity extends AppCompatActivity implements HomeAdapter.Liste
         setContentView(R.layout.activity_home);
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-
-        toolbar.setTitle("DIPO");
-        toolbar.setTitleTextColor(Color.WHITE);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//
+//        toolbar.setTitle("DIPO");
+//        toolbar.setTitleTextColor(Color.WHITE);
+//        setSupportActionBar(toolbar);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         gpsservice = new GPSTrackerService(0, 10, TimeUnit.SECONDS, this);

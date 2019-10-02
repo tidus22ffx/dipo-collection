@@ -2,14 +2,12 @@ package com.example.mobilecollection.utilities;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
-import android.location.LocationProvider;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -23,7 +21,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.mobilecollection.R;
-import com.example.mobilecollection.View.MainActivity;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -66,7 +63,6 @@ public final class Utilities {
 
         ll.addView(progressBar);
         ll.addView(tvText);
-//        AlertDialog.Builder builder = new AlertDialog.Builder(dialogBuilder.getContext());
         dialogBuilder.setCancelable(true);
         dialogBuilder.setView(ll);
 

@@ -42,14 +42,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                style="@style/Text"
+                style="@style/LatoTextSmall"
                 android:text="No. Kontrak: " />
 
             <TextView
                 android:id="@+id/delivered_contract_no"
                 android:layout_width="wrap_content"
                 android:gravity="center_vertical"
-                style="@style/Text"
+                style="@style/LatoTextSmall"
                 android:layout_height="match_parent" />
         </LinearLayout>
 
@@ -62,14 +62,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                style="@style/Text"
+                style="@style/LatoTextSmall"
                 android:text="Nama Customer: " />
 
             <TextView
                 android:id="@+id/delivered_customer_name"
                 android:layout_width="match_parent"
                 android:gravity="center_vertical"
-                style="@style/Text"
+                style="@style/LatoTextSmall"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
@@ -83,14 +83,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                style="@style/Text"
+                style="@style/LatoTextSmall"
                 android:text="No. Plat Kendaraan: " />
 
             <TextView
                 android:id="@+id/delivered_plat"
                 android:layout_width="match_parent"
                 android:gravity="center_vertical"
-                style="@style/Text"
+                style="@style/LatoTextSmall"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>

@@ -4,6 +4,10 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.example.mobilecollection.Repository.API.ApiService;
 import com.example.mobilecollection.Repository.Model.Login;
+import com.example.mobilecollection.di.DaggerApiComponent;
+
+import javax.inject.Inject;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
@@ -11,7 +15,12 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LoginViewModel extends ViewModel {
 
-    ApiService service = new ApiService();
+    @Inject
+    ApiService service;
+
+    public LoginViewModel() {
+        this.service = DaggerApiComponent.builder().build().service();
+    }
 
     MutableLiveData<Login> loginData = new MutableLiveData<>();
     MutableLiveData<Boolean> loginError = new MutableLiveData<>();

@@ -49,20 +49,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="HOB Action"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text"/>
+                        style="@style/LatoTextSmall"/>
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_hobAction"
-                        style="@style/Text"/>
+                        style="@style/LatoTextSmall"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -75,20 +75,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="Penanganan Ke"
-                        style="@style/Text"/>
+                        style="@style/LatoTextSmall"/>
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text"/>
+                        style="@style/LatoTextSmall"/>
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_penanganan"
-                        style="@style/Text"/>
+                        style="@style/LatoTextSmall"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -101,20 +101,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="No. Kontrak"
-                        style="@style/Text"/>
+                        style="@style/LatoTextSmall"/>
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_noKontrak"
-                        style="@style/Text"/>
+                        style="@style/LatoTextSmall"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -127,20 +127,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="Nama Customer"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_namaCustomer"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -153,20 +153,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="Alamat"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_alamat"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -179,20 +179,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="Balance"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_balance"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -205,20 +205,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="Current Balance"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_currentBalance"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -231,20 +231,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="PTP"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_ptp"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -257,20 +257,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="No. Polisi"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_nopol"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -283,20 +283,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:text="Bucket"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:text=":"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"
                         android:id="@+id/to_do_bucket"
-                        style="@style/Text" />
+                        style="@style/LatoTextSmall" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
