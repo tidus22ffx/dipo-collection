@@ -63,7 +63,8 @@ public class ToDoDetailsActivity extends AppCompatActivity {
             overdue, totalPeriod, uslPaid, unit, currentUnit, jumlahAngsuran, balance, currentBalance,
             ptpAmount, remarkAdmin, alamatPerubahan, telpPerubahan, mobilePerubahan, nopol;
     LinearLayout alamatBaru, telpBaru, hpBaru, resultOtherBaru, bertemuLayout, alamatLayout,
-            hpLayout, telpLayout, followUpLayout, visitResultLayout;
+            hpLayout, telpLayout, followUpLayout, visitResultLayout, prioritasLayout, kronologisLayout,
+            foto1Layout;
     EditText kronologi, newAlamat, newKelurahan, newKecamatan, newKodya, newKodePos, newHp, newTelp, newOther;
     Button submit, save;
     int id;
@@ -113,10 +114,11 @@ public class ToDoDetailsActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = bertemu.getSelectedItem().toString();
-                String id = Long.toString(bertemu.getSelectedItemId());
-                scroll.smoothScrollTo(0, bertemuLayout.getTop());
-                Toast.makeText(ToDoDetailsActivity.this, "Duarr "+text+" "+id, Toast.LENGTH_SHORT).show();
+                fieldValidation();
+//                String text = bertemu.getSelectedItem().toString();
+//                String id = Long.toString(bertemu.getSelectedItemId());
+//                scroll.smoothScrollTo(0, bertemuLayout.getTop());
+//                Toast.makeText(ToDoDetailsActivity.this, "Duarr "+text+" "+id, Toast.LENGTH_SHORT).show();
 //                toDoViewModel.saveInputToDB();
             }
         });
@@ -127,6 +129,31 @@ public class ToDoDetailsActivity extends AppCompatActivity {
                 toDoViewModel.saveToPendingDatabase();
             }
         });
+    }
+
+    private void fieldValidation() {
+        if (prioritas.getSelectedItemId() == 0) {
+            scroll.smoothScrollTo(0, prioritasLayout.getTop());
+        } else if (bertemu.getSelectedItemId() == 0) {
+            scroll.smoothScrollTo(0, bertemuLayout.getTop());
+        } else if (statAlamat.getSelectedItemId() == 0) {
+            scroll.smoothScrollTo(0, alamatLayout.getTop());
+        } else if (statHp.getSelectedItemId() == 0) {
+            scroll.smoothScrollTo(0, hpLayout.getTop());
+        } else if (statTelp.getSelectedItemId() == 0) {
+            scroll.smoothScrollTo(0, telpLayout.getTop());
+        } else if (followUp.getSelectedItemId() == 0) {
+            scroll.smoothScrollTo(0, followUpLayout.getTop());
+        } else if (vstResult.getSelectedItemId() == 0) {
+            scroll.smoothScrollTo(0, visitResultLayout.getTop());
+        } else if (kronologi.getText().toString().isEmpty()) {
+            Toast.makeText(ToDoDetailsActivity.this,
+                    "Silahkan Isi Kronolgi Terlebih Dahulu.", Toast.LENGTH_SHORT).show();
+        } else if (foto1.getDrawable().getConstantState() ==
+                getResources().getDrawable(R.drawable.icon_camera).getConstantState()) {
+            Toast.makeText(ToDoDetailsActivity.this,
+                    "Silahkan Ambil Foto Terlebih Dahulu.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -237,6 +264,9 @@ public class ToDoDetailsActivity extends AppCompatActivity {
         telpLayout = findViewById(R.id.statusTelp_spinner_layout);
         followUpLayout = findViewById(R.id.followUp_spinner_layout);
         visitResultLayout = findViewById(R.id.visitResult_spinner_layout);
+        prioritasLayout = findViewById(R.id.prioritas_layout);
+        kronologisLayout = findViewById(R.id.kronologis_layout);
+        foto1Layout = findViewById(R.id.foto1_layout);
     }
 
 
