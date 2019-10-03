@@ -24,4 +24,5 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="transparent_white">#00000000</color>
+    <color name="inputBackground">#ECECEC</color>
 </resources>

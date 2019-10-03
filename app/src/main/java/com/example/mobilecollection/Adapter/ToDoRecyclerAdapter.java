@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -102,7 +103,7 @@ public class ToDoRecyclerAdapter extends RecyclerView.Adapter<ToDoRecyclerAdapte
     public class ToDoViewHolder extends RecyclerView.ViewHolder {
 
         TextView hob, penanganan, noKontrak, namaCust, alamat, balance, currBalance, ptp, nopol, bucket;
-        CardView toDoCv;
+        LinearLayout toDoCv;
 
         public ToDoViewHolder(@NonNull View itemView) {
             super(itemView);

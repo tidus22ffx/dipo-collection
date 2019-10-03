@@ -37,942 +37,781 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="top"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
                 android:isScrollContainer="true"
-                android:orientation="vertical"
-                app:layout_constraintLeft_toLeftOf="@id/detail_container"
-                app:layout_constraintRight_toRightOf="@id/detail_container"
-                app:layout_constraintTop_toTopOf="@id/detail_container">
+                android:orientation="vertical" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:elevation="5dp"
+                    android:orientation="horizontal"
+                    android:background="#FFFFFF"
                     android:id="@+id/prioritas_layout">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/RobotoTextBold"
-                        android:text="Prioritas :" />
-
                     <Spinner
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         style="@style/LatoTextSmall"
                         android:elevation="1dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="7"
                         android:id="@+id/prioritas_spinner"
                         android:background="@drawable/spinner_background"
                         android:entries="@array/prioritas_arrays"
                         android:prompt="@string/prioritas_prompt" />
 
                     <Button
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
                         android:layout_height="wrap_content"
                         android:id="@+id/save_prioritas_button"
                         android:background="@drawable/button_transparent"
                         style="@style/SmallButtonText"
                         android:gravity="center"
-                        android:text="Save Prioritas"
-                        android:layout_marginTop="8dp"/>
+                        android:text="Save"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="HOB Action"
-                        style="@style/RobotoTextBold"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:layout_weight="2"
-                        android:id="@+id/delivered_hob_action"
-                        android:text="HOB Action" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="No. Kontrak"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        style="@style/LatoTextSmall"
-                        android:layout_marginLeft="8dp"
-                        android:id="@+id/delivered_no_kontrak"
-                        android:text="No Kontrak" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Nama Customer"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        style="@style/LatoTextSmall"
-                        android:layout_marginLeft="8dp"
-                        android:id="@+id/delivered_nama_customer"
-                        android:text="Nama" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Tgl Jatuh Tempo"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        style="@style/LatoTextSmall"
-                        android:layout_marginLeft="8dp"
-                        android:id="@+id/delivered_jatuh_tempo"
-                        android:text="jatuh tempo" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Overdue Days"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_overdue"
-                        android:text="Overdue" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="OS Net Receivables"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/delivered_receivable"
-                        android:layout_weight="2"
-                        style="@style/LatoTextSmall"
-                        android:layout_marginLeft="8dp"
-                        android:text="receivable" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Total Period"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:id="@+id/delivered_total_period"
-                        android:layout_weight="2"
-                        style="@style/LatoTextSmall"
-                        android:text="total period" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="USL Paid"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_paid"
-                        android:layout_marginLeft="8dp"
-                        android:layout_weight="2"
-                        android:text="paid" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Unit"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/delivered_unit"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:layout_weight="2"
-                        android:text="Unit" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Brand"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/delivered_brand"
-                        android:layout_weight="2"
-                        style="@style/LatoTextSmall"
-                        android:layout_marginLeft="8dp"
-                        android:text="brand" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Current Unit"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_current_unit"
-                        android:layout_weight="2"
-                        android:text="current unit" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Expired Date"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_expired_date"
-                        android:layout_weight="2"
-                        android:text="total period" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Current Status"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_status"
-                        android:layout_weight="2"
-                        android:text="status" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Jumlah Angsuran"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_jumlah_angsuran"
-                        android:layout_weight="2"
-                        android:text="jumlah angsuran" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Balance"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_balance"
-                        android:layout_weight="2"
-                        android:text="balance" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Group Bucket"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/delivered_bucket"
-                        style="@style/LatoTextSmall"
-                        android:layout_marginLeft="8dp"
-                        android:layout_weight="2"
-                        android:text="bucket" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Alamat"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/delivered_alamat"
-                        style="@style/LatoTextSmall"
-                        android:layout_marginLeft="8dp"
-                        android:layout_weight="2"
-                        android:text="alamat" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Telp"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_telp"
-                        android:layout_weight="2"
-                        android:text="telp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Mobile"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        style="@style/LatoTextSmall"
-                        android:layout_marginLeft="8dp"
-                        android:id="@+id/delivered_mobile"
-                        android:layout_weight="2"
-                        android:text="mobile" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Current Balance"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_current_balance"
-                        android:layout_weight="2"
-                        android:text="current balance" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="PTP"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:id="@+id/delivered_ptp"
-                        style="@style/LatoTextSmall"
-                        android:layout_weight="2"
-                        android:text="PTP" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="PTP Date"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_ptp_date"
-                        android:layout_weight="2"
-                        android:text="ptp date" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="PTP Amount"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:id="@+id/delivered_ptp_amount"
-                        android:layout_weight="2"
-                        style="@style/LatoTextSmall"
-                        android:text="ptp amount" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Remark Admin Call"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:id="@+id/delivered_remark"
-                        style="@style/LatoTextSmall"
-                        android:layout_weight="2"
-                        android:text="remark" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Alamat Perubahan"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_alamat_perubahan"
-                        android:layout_weight="2"
-                        android:text="alamat perubahan" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Telp Perubahan"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_telp_perubahan"
-                        android:layout_weight="2"
-                        android:text="telp perubahan" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="Mobile Perubahan"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_mobile_perubahan"
-                        android:layout_weight="2"
-                        android:text="ptp date" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginVertical="4dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        style="@style/RobotoTextBold"
-                        android:layout_height="wrap_content"
-                        android:text="No. Plat Kendaraan"
-                        android:layout_weight="1.5" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/delivered_plat"
-                        android:layout_weight="2"
-                        android:text="plat kendaraan" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
+                    android:background="#FFF"
                     android:orientation="vertical"
-                    android:id="@+id/bertemu_spinner_layout">
+                    android:paddingLeft="32dp"
+                    android:paddingRight="24dp"
+                    android:paddingTop="16dp" >
 
                     <LinearLayout
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="HOB Action"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_weight="2"
+                            android:id="@+id/delivered_hob_action"
+                            android:text="HOB Action" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="No. Kontrak"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_marginLeft="16dp"
+                            android:id="@+id/delivered_no_kontrak"
+                            android:text="No Kontrak" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Nama Customer"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_marginLeft="16dp"
+                            android:id="@+id/delivered_nama_customer"
+                            android:text="Nama" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Tgl Jatuh Tempo"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_marginLeft="16dp"
+                            android:id="@+id/delivered_jatuh_tempo"
+                            android:text="jatuh tempo" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
                             android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Bertemu Dengan :" />
+                            android:text="Overdue Days"
+                            android:layout_weight="1.5" />
+
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:textColor="@color/colorPrimary"
-                            android:text=" *"/>
+                            android:layout_weight="2"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_overdue"
+                            android:text="Overdue" />
                     </LinearLayout>
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/LatoTextSmall"
-                        android:id="@+id/bertemu_dengan"
-                        android:elevation="1dp"
-                        android:background="@drawable/spinner_background"
-                        android:entries="@array/prioritas_arrays"
-                        android:prompt="@string/prioritas_prompt" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical"
-                    android:id="@+id/statusAlamat_spinner_layout">
 
                     <LinearLayout
                         android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
                             android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Status Alamat :" />
+                            android:text="OS Net Receivables"
+                            android:layout_weight="1.5" />
+
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:textColor="@color/colorPrimary"
-                            android:text=" *"/>
+                            android:id="@+id/delivered_receivable"
+                            android:layout_weight="2"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_marginLeft="16dp"
+                            android:text="receivable" />
                     </LinearLayout>
 
-                    <Spinner
+                    <LinearLayout
                         android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
-                        style="@style/LatoTextSmall"
-                        android:elevation="1dp"
-                        android:id="@+id/status_alamat"
-                        android:background="@drawable/spinner_background"
-                        android:entries="@array/prioritas_arrays"
-                        android:prompt="@string/prioritas_prompt" />
+                        android:orientation="horizontal">
 
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Total Period"
+                            android:layout_weight="1.5" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    android:id="@+id/delivered_alamat_baru">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:id="@+id/delivered_total_period"
+                            android:layout_weight="2"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:text="total period" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="4dp"
-                        android:orientation="vertical">
+                        android:layout_marginVertical="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="USL Paid"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_paid"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="paid" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Unit"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/delivered_unit"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_weight="2"
+                            android:text="Unit" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Brand"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/delivered_brand"
+                            android:layout_weight="2"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_marginLeft="16dp"
+                            android:text="brand" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Current Unit"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_current_unit"
+                            android:layout_weight="2"
+                            android:text="current unit" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Expired Date"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_expired_date"
+                            android:layout_weight="2"
+                            android:text="total period" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Current Status"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_status"
+                            android:layout_weight="2"
+                            android:text="status" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Jumlah Angsuran"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_jumlah_angsuran"
+                            android:layout_weight="2"
+                            android:text="jumlah angsuran" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Balance"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_balance"
+                            android:layout_weight="2"
+                            android:text="balance" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Group Bucket"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/delivered_bucket"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="bucket" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Alamat"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/delivered_alamat"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="alamat" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Telp"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_telp"
+                            android:layout_weight="2"
+                            android:text="telp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_marginLeft="16dp"
+                            android:id="@+id/delivered_mobile"
+                            android:layout_weight="2"
+                            android:text="mobile" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Current Balance"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_current_balance"
+                            android:layout_weight="2"
+                            android:text="current balance" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="PTP"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:id="@+id/delivered_ptp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_weight="2"
+                            android:text="PTP" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="PTP Date"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_ptp_date"
+                            android:layout_weight="2"
+                            android:text="ptp date" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="PTP Amount"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:id="@+id/delivered_ptp_amount"
+                            android:layout_weight="2"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:text="ptp amount" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Remark Admin Call"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:id="@+id/delivered_remark"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:layout_weight="2"
+                            android:text="remark" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Alamat Perubahan"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_alamat_perubahan"
+                            android:layout_weight="2"
+                            android:text="alamat perubahan" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Telp Perubahan"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_telp_perubahan"
+                            android:layout_weight="2"
+                            android:text="telp perubahan" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile Perubahan"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_mobile_perubahan"
+                            android:layout_weight="2"
+                            android:text="ptp date" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="8dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:layout_height="wrap_content"
+                            android:text="No. Plat Kendaraan"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            style="@style/LatoRegularText"
+                            android:textColor="#4d4d4d"
+                            android:id="@+id/delivered_plat"
+                            android:layout_weight="2"
+                            android:text="plat kendaraan" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:id="@+id/bertemu_spinner_layout">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -982,8 +821,562 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/RobotoTextBold"
-                                android:text="Alamat baru :" />
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Bertemu Dengan :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoTextSmall"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoTextSmall"
+                            android:id="@+id/bertemu_dengan"
+                            android:layout_marginTop="8dp"
+                            android:elevation="1dp"
+                            android:background="@drawable/spinner_background"
+                            android:entries="@array/prioritas_arrays"
+                            android:prompt="@string/prioritas_prompt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:id="@+id/statusAlamat_spinner_layout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Status Alamat :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoTextSmall"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoTextSmall"
+                            android:elevation="1dp"
+                            android:id="@+id/status_alamat"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/spinner_background"
+                            android:entries="@array/prioritas_arrays"
+                            android:prompt="@string/prioritas_prompt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:id="@+id/delivered_alamat_baru">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoRegularText"
+                                    android:textColor="#8D8D8D"
+                                    android:text="Alamat baru :" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoTextSmall"
+                                    android:textColor="@color/colorPrimary"
+                                    android:text=" *"/>
+                            </LinearLayout>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                style="@style/LatoTextSmall"
+                                android:elevation="1dp"
+                                android:layout_marginTop="8dp"
+                                android:id="@+id/delivered_alamat_baru_edittext"
+                                android:background="@drawable/edittext_background" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoRegularText"
+                                    android:textColor="#8D8D8D"
+                                    android:text="Kelurahan Baru :" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoTextSmall"
+                                    android:textColor="@color/colorPrimary"
+                                    android:text=" *"/>
+                            </LinearLayout>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                android:layout_marginTop="8dp"
+                                style="@style/LatoTextSmall"
+                                android:elevation="1dp"
+                                android:id="@+id/delivered_kelurahan_baru_edittext"
+                                android:background="@drawable/edittext_background" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoRegularText"
+                                    android:textColor="#8D8D8D"
+                                    android:text="Kecamatan Baru :" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoTextSmall"
+                                    android:textColor="@color/colorPrimary"
+                                    android:text=" *"/>
+                            </LinearLayout>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                android:layout_marginTop="8dp"
+                                style="@style/LatoTextSmall"
+                                android:elevation="1dp"
+                                android:id="@+id/delivered_kecamatan_baru_edittext"
+                                android:background="@drawable/edittext_background" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoRegularText"
+                                    android:textColor="#8D8D8D"
+                                    android:text="Kodya Baru :" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoTextSmall"
+                                    android:textColor="@color/colorPrimary"
+                                    android:text=" *"/>
+                            </LinearLayout>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                style="@style/LatoTextSmall"
+                                android:elevation="1dp"
+                                android:layout_marginTop="8dp"
+                                android:id="@+id/delivered_kodya_baru_edittext"
+                                android:background="@drawable/edittext_background" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoRegularText"
+                                    android:textColor="#8D8D8D"
+                                    android:text="Kode Pos Baru :" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoTextSmall"
+                                    android:textColor="@color/colorPrimary"
+                                    android:text=" *"/>
+                            </LinearLayout>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                style="@style/LatoTextSmall"
+                                android:elevation="1dp"
+                                android:layout_marginTop="8dp"
+                                android:id="@+id/delivered_kodepos_baru_edittext"
+                                android:background="@drawable/edittext_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:id="@+id/statusHP_spinner_layout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Status HP :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoTextSmall"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoTextSmall"
+                            android:elevation="1dp"
+                            android:id="@+id/status_hp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/spinner_background"
+                            android:entries="@array/prioritas_arrays"
+                            android:prompt="@string/prioritas_prompt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:id="@+id/delivered_hp_baru">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoRegularText"
+                                    android:textColor="#8D8D8D"
+                                    android:text="No Hp Baru:" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoTextSmall"
+                                    android:textColor="@color/colorPrimary"
+                                    android:text=" *"/>
+                            </LinearLayout>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                style="@style/LatoTextSmall"
+                                android:elevation="1dp"
+                                android:layout_marginTop="8dp"
+                                android:id="@+id/delivered_hp_baru_edittext"
+                                android:background="@drawable/edittext_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:id="@+id/statusTelp_spinner_layout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Status Telp :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoTextSmall"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoTextSmall"
+                            android:elevation="1dp"
+                            android:id="@+id/status_telp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/spinner_background"
+                            android:entries="@array/prioritas_arrays"
+                            android:prompt="@string/prioritas_prompt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:id="@+id/delivered_telp_baru">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoRegularText"
+                                    android:textColor="#8D8D8D"
+                                    android:text="No Telp Baru :" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/LatoTextSmall"
+                                    android:textColor="@color/colorPrimary"
+                                    android:text=" *"/>
+                            </LinearLayout>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                style="@style/LatoTextSmall"
+                                android:elevation="1dp"
+                                android:id="@+id/delivered_telp_baru_edittext"
+                                android:background="@drawable/edittext_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:id="@+id/followUp_spinner_layout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Follow Up Type :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoTextSmall"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoTextSmall"
+                            android:elevation="1dp"
+                            android:id="@+id/followup_type"
+                            android:background="@drawable/spinner_background"
+                            android:entries="@array/prioritas_arrays"
+                            android:layout_marginTop="8dp"
+                            android:prompt="@string/prioritas_prompt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:id="@+id/visitResult_spinner_layout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Visit Result OVD :" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoTextSmall"
+                                android:textColor="@color/colorPrimary"
+                                android:text=" *"/>
+                        </LinearLayout>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoTextSmall"
+                            android:elevation="1dp"
+                            android:id="@+id/visit_result"
+                            android:background="@drawable/spinner_background"
+                            android:entries="@array/prioritas_arrays"
+                            android:layout_marginTop="8dp"
+                            android:prompt="@string/prioritas_prompt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:id="@+id/delivered_result_other_baru">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Other :" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textMultiLine"
+                                style="@style/LatoTextSmall"
+                                android:layout_marginTop="8dp"
+                                android:elevation="1dp"
+                                android:id="@+id/delivered_result_other_edittext"
+                                android:background="@drawable/edittext_background" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:id="@+id/kronologis_layout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Kronologis :" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -998,7 +1391,8 @@
                             android:inputType="textMultiLine"
                             style="@style/LatoTextSmall"
                             android:elevation="1dp"
-                            android:id="@+id/delivered_alamat_baru_edittext"
+                            android:id="@+id/kronologis"
+                            android:layout_marginTop="8dp"
                             android:background="@drawable/edittext_background" />
 
                     </LinearLayout>
@@ -1006,8 +1400,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="4dp"
-                        android:orientation="vertical">
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:id="@+id/foto1_layout">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1017,8 +1412,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/RobotoTextBold"
-                                android:text="Kelurahan Baru :" />
+                                style="@style/LatoRegularText"
+                                android:textColor="#8D8D8D"
+                                android:text="Foto 1 :" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -1026,515 +1422,110 @@
                                 android:textColor="@color/colorPrimary"
                                 android:text=" *"/>
                         </LinearLayout>
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/delivered_kelurahan_baru_edittext"
-                            android:background="@drawable/edittext_background" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="4dp"
-                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/camera_button_background"
+                            android:paddingVertical="20dp"
+                            android:paddingHorizontal="45dp"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:src="@drawable/ico_camera"
+                                android:layout_height="50dp"
+                                android:layout_width="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="8dp"
+                                android:id="@+id/foto1"
+                                android:foregroundGravity="center"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/RobotoTextBold"
-                                android:text="Kecamatan Baru :" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
+                                android:textAlignment="center"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8d8d8d"
+                                android:text="Click To Take \nPicture"/>
+
                         </LinearLayout>
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/delivered_kecamatan_baru_edittext"
-                            android:background="@drawable/edittext_background" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="4dp"
+                        android:layout_marginVertical="8dp"
                         android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/LatoRegularText"
+                            android:textColor="#8D8D8D"
+                            android:text="Foto 2 :" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/camera_button_background"
+                            android:paddingVertical="20dp"
+                            android:paddingHorizontal="45dp"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:src="@drawable/ico_camera"
+                                android:layout_height="50dp"
+                                android:layout_width="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="8dp"
+                                android:id="@+id/foto2"
+                                android:foregroundGravity="center"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="@style/RobotoTextBold"
-                                android:text="Kodya Baru :" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
+                                android:textAlignment="center"
+                                style="@style/LatoRegularText"
+                                android:textColor="#8d8d8d"
+                                android:text="Click To Take \nPicture"/>
+
                         </LinearLayout>
 
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/delivered_kodya_baru_edittext"
-                            android:background="@drawable/edittext_background" />
-
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="4dp"
+                        android:layout_marginVertical="8dp"
+                        android:paddingVertical="20dp"
                         android:orientation="vertical">
 
-                        <LinearLayout
+                        <Button
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:background="@drawable/button_transparent"
+                            style="@style/SmallButtonText"
+                            android:gravity="center"
+                            android:id="@+id/detail_save_button"
+                            android:text="SAVE"
+                            android:layout_margin="4dp"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/RobotoTextBold"
-                                android:text="Kode Pos Baru :" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
-                        </LinearLayout>
-
-                        <EditText
+                        <Button
                             android:layout_width="match_parent"
+                            android:id="@+id/detail_submit_button"
                             android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/delivered_kodepos_baru_edittext"
-                            android:background="@drawable/edittext_background" />
+                            android:background="@drawable/button_transparent"
+                            style="@style/SmallButtonText"
+                            android:gravity="center"
+                            android:text="SUBMIT"
+                            android:layout_margin="4dp"/>
 
                     </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical"
-                    android:id="@+id/statusHP_spinner_layout">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Status HP :" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:textColor="@color/colorPrimary"
-                            android:text=" *"/>
-                    </LinearLayout>
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/LatoTextSmall"
-                        android:elevation="1dp"
-                        android:id="@+id/status_hp"
-                        android:background="@drawable/spinner_background"
-                        android:entries="@array/prioritas_arrays"
-                        android:prompt="@string/prioritas_prompt" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    android:id="@+id/delivered_hp_baru">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="4dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/RobotoTextBold"
-                                android:text="No Hp Baru:" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
-                        </LinearLayout>
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/delivered_hp_baru_edittext"
-                            android:background="@drawable/edittext_background" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical"
-                    android:id="@+id/statusTelp_spinner_layout">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Status Telp :" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:textColor="@color/colorPrimary"
-                            android:text=" *"/>
-                    </LinearLayout>
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/LatoTextSmall"
-                        android:elevation="1dp"
-                        android:id="@+id/status_telp"
-                        android:background="@drawable/spinner_background"
-                        android:entries="@array/prioritas_arrays"
-                        android:prompt="@string/prioritas_prompt" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    android:id="@+id/delivered_telp_baru">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="4dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/RobotoTextBold"
-                                android:text="No Telp Baru :" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
-                        </LinearLayout>
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/delivered_telp_baru_edittext"
-                            android:background="@drawable/edittext_background" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical"
-                    android:id="@+id/followUp_spinner_layout">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Follow Up Type :" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:textColor="@color/colorPrimary"
-                            android:text=" *"/>
-                    </LinearLayout>
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/LatoTextSmall"
-                        android:elevation="1dp"
-                        android:id="@+id/followup_type"
-                        android:background="@drawable/spinner_background"
-                        android:entries="@array/prioritas_arrays"
-                        android:prompt="@string/prioritas_prompt" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical"
-                    android:id="@+id/visitResult_spinner_layout">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Visit Result OVD :" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:textColor="@color/colorPrimary"
-                            android:text=" *"/>
-                    </LinearLayout>
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/LatoTextSmall"
-                        android:elevation="1dp"
-                        android:id="@+id/visit_result"
-                        android:background="@drawable/spinner_background"
-                        android:entries="@array/prioritas_arrays"
-                        android:prompt="@string/prioritas_prompt" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    android:id="@+id/delivered_result_other_baru">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="4dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Other :" />
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/delivered_result_other_edittext"
-                            android:background="@drawable/edittext_background" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical"
-                    android:id="@+id/kronologis_layout">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Kronologis :" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:textColor="@color/colorPrimary"
-                            android:text=" *"/>
-                    </LinearLayout>
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
-                        style="@style/LatoTextSmall"
-                        android:elevation="1dp"
-                        android:id="@+id/kronologis"
-                        android:background="@drawable/edittext_background" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical"
-                    android:id="@+id/foto1_layout">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/RobotoTextBold"
-                            android:text="Foto 1 :" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:textColor="@color/colorPrimary"
-                            android:text=" *"/>
-                    </LinearLayout>
-
-                    <ImageView
-                        android:src="@drawable/icon_camera"
-                        android:layout_height="80dp"
-                        android:layout_width="80dp"
-                        android:layout_gravity="center"
-                        android:id="@+id/foto1"
-                        android:background="@drawable/edittext_background"
-                        android:foregroundGravity="center"
-                        android:scaleType="fitCenter"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/RobotoTextBold"
-                        android:text="Foto 2 :" />
-
-                    <ImageView
-                        android:src="@drawable/icon_camera"
-                        android:layout_height="80dp"
-                        android:layout_width="80dp"
-                        android:layout_gravity="center"
-                        android:id="@+id/foto2"
-                        android:background="@drawable/edittext_background"
-                        android:foregroundGravity="center"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="4dp"
-                    android:paddingVertical="20dp"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/button_transparent"
-                        style="@style/SmallButtonText"
-                        android:gravity="center"
-                        android:id="@+id/detail_save_button"
-                        android:text="SAVE"
-                        android:layout_margin="4dp"/>
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:id="@+id/detail_submit_button"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/button_transparent"
-                        style="@style/SmallButtonText"
-                        android:gravity="center"
-                        android:text="SUBMIT"
-                        android:layout_margin="4dp"/>
 
                 </LinearLayout>
 
