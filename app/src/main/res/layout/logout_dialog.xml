@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight=".4"
-            android:background="@drawable/button_transparent"
+            android:background="@drawable/button_solid_red"
             android:textColor="@android:color/white"
             android:text="Ya"
             android:layout_marginRight="10dp"
@@ -49,7 +49,7 @@
             android:layout_height="30dp"
             android:layout_weight=".4"
             android:textColor="@android:color/white"
-            android:background="@drawable/button_transparent"
+            android:background="@drawable/button_solid_red"
             android:text="Tidak"
             android:textSize="14sp" />
     </LinearLayout>

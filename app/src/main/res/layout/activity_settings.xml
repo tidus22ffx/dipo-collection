@@ -193,7 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             style="@style/ButtonText"
-            android:background="@drawable/button_transparent"
+            android:background="@drawable/button_solid_red"
             android:text="Cek Koneksi"
             android:textSize="14sp" />
     </LinearLayout>

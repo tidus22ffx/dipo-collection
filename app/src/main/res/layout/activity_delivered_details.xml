@@ -68,7 +68,7 @@
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
                         android:id="@+id/save_prioritas_button"
-                        android:background="@drawable/button_transparent"
+                        android:background="@drawable/button_solid_red"
                         style="@style/SmallButtonText"
                         android:gravity="center"
                         android:text="Save"/>
@@ -1508,22 +1508,22 @@
                         <Button
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/button_transparent"
+                            android:background="@drawable/button_solid_grey"
                             style="@style/SmallButtonText"
                             android:gravity="center"
                             android:id="@+id/detail_save_button"
                             android:text="SAVE"
-                            android:layout_margin="4dp"/>
+                            android:layout_margin="8dp"/>
 
                         <Button
                             android:layout_width="match_parent"
                             android:id="@+id/detail_submit_button"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/button_transparent"
+                            android:background="@drawable/button_solid_red"
                             style="@style/SmallButtonText"
                             android:gravity="center"
                             android:text="SUBMIT"
-                            android:layout_margin="4dp"/>
+                            android:layout_margin="8dp"/>
 
                     </LinearLayout>
 
