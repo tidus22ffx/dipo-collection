@@ -10,22 +10,18 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.mobilecollection.Adapter.DeliveredRecyclerAdapter;
 import com.example.mobilecollection.Adapter.ToDoRecyclerAdapter;
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
-import com.example.mobilecollection.ViewModel.DeliveredViewModel;
 import com.example.mobilecollection.ViewModel.ToDoViewModel;
+import com.example.mobilecollection.utilities.Utilities;
 
 import java.util.ArrayList;
 
@@ -50,8 +46,11 @@ public class ToDoListActivity extends AppCompatActivity implements  ToDoRecycler
         TextView textView = findViewById(R.id.toolbar_text);
         searchView = findViewById(R.id.to_do_search);
 
-        textView.setText("To Do List");
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
+        Drawable backButton = getDrawable(R.drawable.ico_back);
+        Drawable resizedBackButton = Utilities.resizeDrawable(backButton, this, 20, 20);
+
+        textView.setText("TO DO LIST");
+        toolbar.setNavigationIcon(resizedBackButton);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 

@@ -31,7 +31,7 @@ public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecycler
     @NonNull
     @Override
     public PendingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.delivered_list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pending_list_item, parent, false);
         PendingRecyclerAdapter.PendingViewHolder viewHolder = new PendingRecyclerAdapter.PendingViewHolder(view);
         return viewHolder;
     }
@@ -62,7 +62,7 @@ public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecycler
         private TextView contractNo;
         private TextView customerName;
         private TextView plat;
-        private ImageView imageView;
+//        private ImageView imageView;
         private int id;
 
         public int getId() {
@@ -74,7 +74,7 @@ public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecycler
             contractNo = itemView.findViewById(R.id.delivered_contract_no);
             customerName = itemView.findViewById(R.id.delivered_customer_name);
             plat = itemView.findViewById(R.id.delivered_plat);
-            imageView = itemView.findViewById(R.id.delivered_image);
+//            imageView = itemView.findViewById(R.id.delivered_image);
         }
 
         void bind(TodoItem todoItem){
@@ -82,7 +82,7 @@ public class PendingRecyclerAdapter extends RecyclerView.Adapter<PendingRecycler
             contractNo.setText(todoItem.getContractNo());
             customerName.setText(todoItem.getCustomerName());
             plat.setText(todoItem.getPlat());
-            imageView.setImageResource(R.drawable.ic_pending_list);
+//            imageView.setImageResource(R.drawable.ic_pending_list);
         }
     }
 }

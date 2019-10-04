@@ -74,14 +74,14 @@ public class DeliveredRecyclerAdapter extends RecyclerView.Adapter<DeliveredRecy
             contractNo = itemView.findViewById(R.id.delivered_contract_no);
             customerName = itemView.findViewById(R.id.delivered_customer_name);
             plat = itemView.findViewById(R.id.delivered_plat);
-            imageView = itemView.findViewById(R.id.delivered_image);
+//            imageView = itemView.findViewById(R.id.delivered_image);
         }
 
         void bind(TodoItem todoItem){
             contractNo.setText(todoItem.getContractNo());
             customerName.setText(todoItem.getCustomerName());
             plat.setText(todoItem.getPlat());
-            imageView.setImageResource(R.drawable.ic_checklist);
+//            imageView.setImageResource(R.drawable.ic_checklist);
             itemId = todoItem.getId();
         }
     }

@@ -5,7 +5,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.view.Gravity;
@@ -160,5 +163,11 @@ public final class Utilities {
         } else {
             return true;
         }
+    }
+
+    public static Drawable resizeDrawable(Drawable drawable, Context context, int dstwidth, int dstheight){
+        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+        Drawable newdrawable = new BitmapDrawable(context.getResources(), Bitmap.createScaledBitmap(bitmap, dstwidth, dstheight, true));
+        return newdrawable;
     }
 }

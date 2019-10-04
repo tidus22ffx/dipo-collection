@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
                 android:layout_weight="1.5"
-                android:textColor="#8AAD83"
+                android:textColor="#8D8D8D"
                 android:gravity="center_vertical"
                 style="@style/LatoRegularText"
                 android:text="No. Kontrak" />
@@ -36,7 +36,7 @@
                 android:id="@+id/delivered_contract_no"
                 android:layout_width="0dp"
                 android:layout_weight="2"
-                android:textColor="#3AC340"
+                android:textColor="#4D4D4D"
                 android:gravity="center_vertical"
                 style="@style/LatoRegularText"
                 android:layout_height="match_parent" />

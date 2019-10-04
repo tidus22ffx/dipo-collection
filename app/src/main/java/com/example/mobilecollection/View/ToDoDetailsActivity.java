@@ -4,8 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -30,13 +28,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.ViewModel.ToDoDetailsViewModel;
-import com.example.mobilecollection.ViewModel.ToDoViewModel;
 import com.example.mobilecollection.utilities.Utilities;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class ToDoDetailsActivity extends AppCompatActivity {
     private static final int PIC_FOTO_1 = 1;
@@ -78,7 +70,7 @@ public class ToDoDetailsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         TextView textView = findViewById(R.id.toolbar_text);
         textView.setText("To Do List Details");
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
+        toolbar.setNavigationIcon(R.drawable.ico_back);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 

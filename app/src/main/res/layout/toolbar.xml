@@ -16,7 +16,7 @@
             android:id="@+id/toolbar_text"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/lato_heavy"
             android:layout_marginEnd="80dp"
             android:gravity="center"/>
     </androidx.appcompat.widget.Toolbar>

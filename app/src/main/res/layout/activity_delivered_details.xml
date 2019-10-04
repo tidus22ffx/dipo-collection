@@ -81,8 +81,8 @@
                     android:background="#FFF"
                     android:orientation="vertical"
                     android:paddingLeft="32dp"
-                    android:paddingRight="24dp"
-                    android:paddingTop="16dp" >
+                    android:paddingTop="16dp"
+                    android:paddingRight="24dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -91,22 +91,22 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            style="@style/LatoRegularText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="HOB Action"
-                            style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:layout_weight="2"
                             android:id="@+id/delivered_hob_action"
-                            android:text="HOB Action" />
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="HOB Action"
+                            android:textColor="#4d4d4d" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -116,22 +116,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="No. Kontrak"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:layout_marginLeft="16dp"
                             android:id="@+id/delivered_no_kontrak"
-                            android:text="No Kontrak" />
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="No Kontrak"
+                            android:textColor="#4d4d4d" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -141,22 +141,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Nama Customer"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:layout_marginLeft="16dp"
                             android:id="@+id/delivered_nama_customer"
-                            android:text="Nama" />
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="Nama"
+                            android:textColor="#4d4d4d" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -166,97 +166,97 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Tgl Jatuh Tempo"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:layout_marginLeft="16dp"
                             android:id="@+id/delivered_jatuh_tempo"
-                            android:text="jatuh tempo" />
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="jatuh tempo"
+                            android:textColor="#4d4d4d" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Overdue Days"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_overdue"
-                            android:text="Overdue" />
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="Overdue"
+                            android:textColor="#4d4d4d" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="OS Net Receivables"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
                             android:id="@+id/delivered_receivable"
-                            android:layout_weight="2"
                             style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            android:text="receivable" />
+                            android:layout_weight="2"
+                            android:text="receivable"
+                            android:textColor="#4d4d4d" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Total Period"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
                             android:id="@+id/delivered_total_period"
-                            android:layout_weight="2"
                             style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:text="total period" />
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="total period"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
@@ -267,22 +267,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="USL Paid"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_paid"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="paid" />
+                            android:text="paid"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
@@ -293,525 +293,525 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Unit"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
                             android:id="@+id/delivered_unit"
-                            android:layout_marginLeft="16dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="Unit" />
+                            android:text="Unit"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Brand"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
                             android:id="@+id/delivered_brand"
-                            android:layout_weight="2"
                             style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            android:text="brand" />
+                            android:layout_weight="2"
+                            android:text="brand"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Current Unit"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_current_unit"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="current unit" />
+                            android:text="current unit"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Expired Date"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_expired_date"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="total period" />
+                            android:text="total period"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Current Status"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_status"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="status" />
+                            android:text="status"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Jumlah Angsuran"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_jumlah_angsuran"
-                            android:layout_weight="2"
-                            android:text="jumlah angsuran" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
-                            android:layout_height="wrap_content"
-                            android:text="Balance"
-                            android:layout_weight="1.5" />
-
-                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:id="@+id/delivered_balance"
                             android:layout_weight="2"
-                            android:text="balance" />
+                            android:text="jumlah angsuran"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Group Bucket"
-                            android:layout_weight="1.5" />
+                            android:layout_weight="1.5"
+                            android:text="Balance"
+                            android:textColor="#8D8D8D" />
 
                         <TextView
+                            android:id="@+id/delivered_balance"
+                            style="@style/LatoRegularText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_weight="2"
+                            android:text="balance"
+                            android:textColor="#4d4d4d" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="Group Bucket"
+                            android:textColor="#8D8D8D" />
+
+                        <TextView
                             android:id="@+id/delivered_bucket"
                             style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="bucket" />
+                            android:text="bucket"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Alamat"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
                             android:id="@+id/delivered_alamat"
                             style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="alamat" />
+                            android:text="alamat"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Telp"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_telp"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="telp" />
+                            android:text="telp"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Mobile"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:layout_marginLeft="16dp"
                             android:id="@+id/delivered_mobile"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="mobile" />
+                            android:text="mobile"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Current Balance"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
+                            android:id="@+id/delivered_current_balance"
+                            style="@style/LatoRegularText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:id="@+id/delivered_current_balance"
                             android:layout_weight="2"
-                            android:text="current balance" />
+                            android:text="current balance"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="PTP"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
                             android:id="@+id/delivered_ptp"
                             style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="PTP" />
+                            android:text="PTP"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="PTP Date"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_ptp_date"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="ptp date" />
+                            android:text="ptp date"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="PTP Amount"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
+                            android:id="@+id/delivered_ptp_amount"
+                            style="@style/LatoRegularText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            android:id="@+id/delivered_ptp_amount"
                             android:layout_weight="2"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:text="ptp amount" />
+                            android:text="ptp amount"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Remark Admin Call"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
                             android:id="@+id/delivered_remark"
                             style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="remark" />
+                            android:text="remark"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Alamat Perubahan"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_alamat_perubahan"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="alamat perubahan" />
+                            android:text="alamat perubahan"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Telp Perubahan"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
                             android:id="@+id/delivered_telp_perubahan"
+                            style="@style/LatoRegularText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:layout_weight="2"
-                            android:text="telp perubahan" />
+                            android:text="telp perubahan"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="Mobile Perubahan"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
+                            android:id="@+id/delivered_mobile_perubahan"
+                            style="@style/LatoRegularText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:id="@+id/delivered_mobile_perubahan"
                             android:layout_weight="2"
-                            android:text="ptp date" />
+                            android:text="ptp date"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginVertical="8dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="0dp"
                             style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
                             android:text="No. Plat Kendaraan"
-                            android:layout_weight="1.5" />
+                            android:textColor="#8D8D8D" />
 
                         <TextView
+                            android:id="@+id/delivered_plat"
+                            style="@style/LatoRegularText"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            style="@style/LatoRegularText"
-                            android:textColor="#4d4d4d"
-                            android:id="@+id/delivered_plat"
                             android:layout_weight="2"
-                            android:text="plat kendaraan" />
+                            android:text="plat kendaraan"
+                            android:textColor="#4d4d4d" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/bertemu_spinner_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
-                        android:orientation="vertical"
-                        android:id="@+id/bertemu_spinner_layout">
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -819,38 +819,39 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Bertemu Dengan :" />
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="Bertemu Dengan :"
+                                android:textColor="#8D8D8D" />
+
+                            <TextView
                                 style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/colorPrimary" />
                         </LinearLayout>
 
                         <Spinner
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
                             android:id="@+id/bertemu_dengan"
+                            style="@style/LatoTextSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:elevation="1dp"
                             android:background="@drawable/spinner_background"
+                            android:elevation="1dp"
                             android:entries="@array/prioritas_arrays"
                             android:prompt="@string/prioritas_prompt" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/statusAlamat_spinner_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
-                        android:orientation="vertical"
-                        android:id="@+id/statusAlamat_spinner_layout">
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -858,38 +859,39 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Status Alamat :" />
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="Status Alamat :"
+                                android:textColor="#8D8D8D" />
+
+                            <TextView
                                 style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/colorPrimary" />
                         </LinearLayout>
 
                         <Spinner
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
                             android:id="@+id/status_alamat"
+                            style="@style/LatoTextSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:background="@drawable/spinner_background"
+                            android:elevation="1dp"
                             android:entries="@array/prioritas_arrays"
                             android:prompt="@string/prioritas_prompt" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/delivered_alamat_baru"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:id="@+id/delivered_alamat_baru">
+                        android:visibility="gone">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -897,34 +899,35 @@
                             android:layout_marginVertical="8dp"
                             android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoRegularText"
-                                    android:textColor="#8D8D8D"
-                                    android:text="Alamat baru :" />
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoTextSmall"
-                                    android:textColor="@color/colorPrimary"
-                                    android:text=" *"/>
-                            </LinearLayout>
-
                             <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="textMultiLine"
-                                style="@style/LatoTextSmall"
-                                android:elevation="1dp"
-                                android:layout_marginTop="8dp"
                                 android:id="@+id/delivered_alamat_baru_edittext"
-                                android:background="@drawable/edittext_background" />
+                                style="@style/LatoTextSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/edittext_background"
+                                android:elevation="1dp"
+                                android:inputType="textMultiLine" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/LatoRegularText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Alamat baru :"
+                                    android:textColor="#8D8D8D" />
+
+                                <TextView
+                                    style="@style/LatoTextSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" *"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -934,34 +937,35 @@
                             android:layout_marginVertical="8dp"
                             android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoRegularText"
-                                    android:textColor="#8D8D8D"
-                                    android:text="Kelurahan Baru :" />
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoTextSmall"
-                                    android:textColor="@color/colorPrimary"
-                                    android:text=" *"/>
-                            </LinearLayout>
-
                             <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="textMultiLine"
-                                android:layout_marginTop="8dp"
-                                style="@style/LatoTextSmall"
-                                android:elevation="1dp"
                                 android:id="@+id/delivered_kelurahan_baru_edittext"
-                                android:background="@drawable/edittext_background" />
+                                style="@style/LatoTextSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/edittext_background"
+                                android:elevation="1dp"
+                                android:inputType="textMultiLine" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/LatoRegularText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kelurahan Baru :"
+                                    android:textColor="#8D8D8D" />
+
+                                <TextView
+                                    style="@style/LatoTextSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" *"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -971,34 +975,35 @@
                             android:layout_marginVertical="8dp"
                             android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoRegularText"
-                                    android:textColor="#8D8D8D"
-                                    android:text="Kecamatan Baru :" />
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoTextSmall"
-                                    android:textColor="@color/colorPrimary"
-                                    android:text=" *"/>
-                            </LinearLayout>
-
                             <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="textMultiLine"
-                                android:layout_marginTop="8dp"
-                                style="@style/LatoTextSmall"
-                                android:elevation="1dp"
                                 android:id="@+id/delivered_kecamatan_baru_edittext"
-                                android:background="@drawable/edittext_background" />
+                                style="@style/LatoTextSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/edittext_background"
+                                android:elevation="1dp"
+                                android:inputType="textMultiLine" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/LatoRegularText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kecamatan Baru :"
+                                    android:textColor="#8D8D8D" />
+
+                                <TextView
+                                    style="@style/LatoTextSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" *"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -1008,34 +1013,35 @@
                             android:layout_marginVertical="8dp"
                             android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoRegularText"
-                                    android:textColor="#8D8D8D"
-                                    android:text="Kodya Baru :" />
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoTextSmall"
-                                    android:textColor="@color/colorPrimary"
-                                    android:text=" *"/>
-                            </LinearLayout>
-
                             <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="textMultiLine"
-                                style="@style/LatoTextSmall"
-                                android:elevation="1dp"
-                                android:layout_marginTop="8dp"
                                 android:id="@+id/delivered_kodya_baru_edittext"
-                                android:background="@drawable/edittext_background" />
+                                style="@style/LatoTextSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/edittext_background"
+                                android:elevation="1dp"
+                                android:inputType="textMultiLine" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/LatoRegularText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kodya Baru :"
+                                    android:textColor="#8D8D8D" />
+
+                                <TextView
+                                    style="@style/LatoTextSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" *"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -1045,45 +1051,46 @@
                             android:layout_marginVertical="8dp"
                             android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoRegularText"
-                                    android:textColor="#8D8D8D"
-                                    android:text="Kode Pos Baru :" />
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoTextSmall"
-                                    android:textColor="@color/colorPrimary"
-                                    android:text=" *"/>
-                            </LinearLayout>
-
                             <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="textMultiLine"
-                                style="@style/LatoTextSmall"
-                                android:elevation="1dp"
-                                android:layout_marginTop="8dp"
                                 android:id="@+id/delivered_kodepos_baru_edittext"
-                                android:background="@drawable/edittext_background" />
+                                style="@style/LatoTextSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/edittext_background"
+                                android:elevation="1dp"
+                                android:inputType="textMultiLine" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/LatoRegularText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kode Pos Baru :"
+                                    android:textColor="#8D8D8D" />
+
+                                <TextView
+                                    style="@style/LatoTextSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" *"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
 
                         </LinearLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/statusHP_spinner_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
-                        android:orientation="vertical"
-                        android:id="@+id/statusHP_spinner_layout">
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1091,38 +1098,39 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Status HP :" />
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="Status HP :"
+                                android:textColor="#8D8D8D" />
+
+                            <TextView
                                 style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/colorPrimary" />
                         </LinearLayout>
 
                         <Spinner
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
                             android:id="@+id/status_hp"
+                            style="@style/LatoTextSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:background="@drawable/spinner_background"
+                            android:elevation="1dp"
                             android:entries="@array/prioritas_arrays"
                             android:prompt="@string/prioritas_prompt" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/delivered_hp_baru"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:id="@+id/delivered_hp_baru">
+                        android:visibility="gone">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1130,90 +1138,15 @@
                             android:layout_marginVertical="8dp"
                             android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoRegularText"
-                                    android:textColor="#8D8D8D"
-                                    android:text="No Hp Baru:" />
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    style="@style/LatoTextSmall"
-                                    android:textColor="@color/colorPrimary"
-                                    android:text=" *"/>
-                            </LinearLayout>
-
                             <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="textMultiLine"
-                                style="@style/LatoTextSmall"
-                                android:elevation="1dp"
-                                android:layout_marginTop="8dp"
                                 android:id="@+id/delivered_hp_baru_edittext"
-                                android:background="@drawable/edittext_background" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="8dp"
-                        android:orientation="vertical"
-                        android:id="@+id/statusTelp_spinner_layout">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Status Telp :" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
-                        </LinearLayout>
-
-                        <Spinner
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/status_telp"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/spinner_background"
-                            android:entries="@array/prioritas_arrays"
-                            android:prompt="@string/prioritas_prompt" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:visibility="gone"
-                        android:id="@+id/delivered_telp_baru">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="8dp"
-                            android:orientation="vertical">
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/edittext_background"
+                                android:elevation="1dp"
+                                android:inputType="textMultiLine" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -1221,38 +1154,30 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
                                     style="@style/LatoRegularText"
-                                    android:textColor="#8D8D8D"
-                                    android:text="No Telp Baru :" />
-                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:text="No Hp Baru:"
+                                    android:textColor="#8D8D8D" />
+
+                                <TextView
                                     style="@style/LatoTextSmall"
-                                    android:textColor="@color/colorPrimary"
-                                    android:text=" *"/>
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" *"
+                                    android:textColor="@color/colorPrimary" />
                             </LinearLayout>
 
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="textMultiLine"
-                                style="@style/LatoTextSmall"
-                                android:elevation="1dp"
-                                android:id="@+id/delivered_telp_baru_edittext"
-                                android:background="@drawable/edittext_background" />
-
                         </LinearLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/statusTelp_spinner_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
-                        android:orientation="vertical"
-                        android:id="@+id/followUp_spinner_layout">
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1260,77 +1185,39 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Follow Up Type :" />
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="Status Telp :"
+                                android:textColor="#8D8D8D" />
+
+                            <TextView
                                 style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/colorPrimary" />
                         </LinearLayout>
 
                         <Spinner
+                            android:id="@+id/status_telp"
+                            style="@style/LatoTextSmall"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/followup_type"
-                            android:background="@drawable/spinner_background"
-                            android:entries="@array/prioritas_arrays"
                             android:layout_marginTop="8dp"
+                            android:background="@drawable/spinner_background"
+                            android:elevation="1dp"
+                            android:entries="@array/prioritas_arrays"
                             android:prompt="@string/prioritas_prompt" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="8dp"
-                        android:orientation="vertical"
-                        android:id="@+id/visitResult_spinner_layout">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Visit Result OVD :" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
-                        </LinearLayout>
-
-                        <Spinner
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/visit_result"
-                            android:background="@drawable/spinner_background"
-                            android:entries="@array/prioritas_arrays"
-                            android:layout_marginTop="8dp"
-                            android:prompt="@string/prioritas_prompt" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                        android:id="@+id/delivered_telp_baru"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="gone"
-                        android:id="@+id/delivered_result_other_baru">
+                        android:visibility="gone">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1338,33 +1225,45 @@
                             android:layout_marginVertical="8dp"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Other :" />
-
                             <EditText
+                                android:id="@+id/delivered_telp_baru_edittext"
+                                style="@style/LatoTextSmall"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textMultiLine"
-                                style="@style/LatoTextSmall"
-                                android:layout_marginTop="8dp"
+                                android:background="@drawable/edittext_background"
                                 android:elevation="1dp"
-                                android:id="@+id/delivered_result_other_edittext"
-                                android:background="@drawable/edittext_background" />
+                                android:inputType="textMultiLine" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/LatoRegularText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="No Telp Baru :"
+                                    android:textColor="#8D8D8D" />
+
+                                <TextView
+                                    style="@style/LatoTextSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" *"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
 
                         </LinearLayout>
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/followUp_spinner_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
-                        android:orientation="vertical"
-                        android:id="@+id/kronologis_layout">
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1372,28 +1271,245 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
                                 style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Kronologis :" />
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="Follow Up Type :"
+                                android:textColor="#8D8D8D" />
+
+                            <TextView
                                 style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/colorPrimary" />
                         </LinearLayout>
+
+                        <Spinner
+                            android:id="@+id/followup_type"
+                            style="@style/LatoTextSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/spinner_background"
+                            android:elevation="1dp"
+                            android:entries="@array/prioritas_arrays"
+                            android:prompt="@string/prioritas_prompt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/visitResult_spinner_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/LatoRegularText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Visit Result OVD :"
+                                android:textColor="#8D8D8D" />
+
+                            <TextView
+                                style="@style/LatoTextSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/colorPrimary" />
+                        </LinearLayout>
+
+                        <Spinner
+                            android:id="@+id/visit_result"
+                            style="@style/LatoTextSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/spinner_background"
+                            android:elevation="1dp"
+                            android:entries="@array/prioritas_arrays"
+                            android:prompt="@string/prioritas_prompt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/delivered_result_other_baru"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/delivered_result_other_edittext"
+                                style="@style/LatoTextSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/edittext_background"
+                                android:elevation="1dp"
+                                android:inputType="textMultiLine" />
+
+                            <TextView
+                                style="@style/LatoRegularText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Other :"
+                                android:textColor="#8D8D8D" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/kronologis_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical">
 
                         <EditText
+                            android:id="@+id/kronologis"
+                            style="@style/LatoTextSmall"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            style="@style/LatoTextSmall"
-                            android:elevation="1dp"
-                            android:id="@+id/kronologis"
                             android:layout_marginTop="8dp"
-                            android:background="@drawable/edittext_background" />
+                            android:background="@drawable/edittext_background"
+                            android:elevation="1dp"
+                            android:inputType="textMultiLine" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/LatoRegularText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kronologis :"
+                                android:textColor="#8D8D8D" />
+
+                            <TextView
+                                style="@style/LatoTextSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/colorPrimary" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/foto1_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/LatoRegularText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Foto 1 :"
+                                android:textColor="#8D8D8D" />
+
+                            <TextView
+                                style="@style/LatoTextSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/colorPrimary" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/camera_button_background"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="45dp"
+                            android:paddingVertical="20dp">
+
+                            <ImageView
+                                android:id="@+id/foto1"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="8dp"
+                                android:foregroundGravity="center"
+                                android:src="@drawable/ico_camera" />
+
+                            <TextView
+                                style="@style/LatoRegularText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Click To Take \nPicture"
+                                android:textAlignment="center"
+                                android:textColor="#8d8d8d" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/camera_button_background"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="45dp"
+                            android:paddingVertical="20dp">
+
+                            <ImageView
+                                android:id="@+id/foto2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="8dp"
+                                android:foregroundGravity="center"
+                                android:src="@drawable/ico_camera" />
+
+                            <TextView
+                                style="@style/LatoRegularText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Click To Take \nPicture"
+                                android:textAlignment="center"
+                                android:textColor="#8d8d8d" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/LatoRegularText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Foto 2 :"
+                            android:textColor="#8D8D8D" />
 
                     </LinearLayout>
 
@@ -1402,128 +1518,27 @@
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
                         android:orientation="vertical"
-                        android:id="@+id/foto1_layout">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoRegularText"
-                                android:textColor="#8D8D8D"
-                                android:text="Foto 1 :" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/LatoTextSmall"
-                                android:textColor="@color/colorPrimary"
-                                android:text=" *"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/camera_button_background"
-                            android:paddingVertical="20dp"
-                            android:paddingHorizontal="45dp"
-                            android:layout_height="wrap_content" >
-
-                            <ImageView
-                                android:src="@drawable/ico_camera"
-                                android:layout_height="50dp"
-                                android:layout_width="50dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="8dp"
-                                android:id="@+id/foto1"
-                                android:foregroundGravity="center"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                style="@style/LatoRegularText"
-                                android:textColor="#8d8d8d"
-                                android:text="Click To Take \nPicture"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="8dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/LatoRegularText"
-                            android:textColor="#8D8D8D"
-                            android:text="Foto 2 :" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/camera_button_background"
-                            android:paddingVertical="20dp"
-                            android:paddingHorizontal="45dp"
-                            android:layout_height="wrap_content" >
-
-                            <ImageView
-                                android:src="@drawable/ico_camera"
-                                android:layout_height="50dp"
-                                android:layout_width="50dp"
-                                android:layout_gravity="center"
-                                android:layout_marginBottom="8dp"
-                                android:id="@+id/foto2"
-                                android:foregroundGravity="center"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                style="@style/LatoRegularText"
-                                android:textColor="#8d8d8d"
-                                android:text="Click To Take \nPicture"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="8dp"
-                        android:paddingVertical="20dp"
-                        android:orientation="vertical">
+                        android:paddingVertical="20dp">
 
                         <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/button_solid_grey"
-                            style="@style/SmallButtonText"
-                            android:gravity="center"
                             android:id="@+id/detail_save_button"
-                            android:text="SAVE"
-                            android:layout_margin="8dp"/>
+                            style="@style/SmallButtonText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/button_solid_grey"
+                            android:gravity="center"
+                            android:text="SAVE" />
 
                         <Button
-                            android:layout_width="match_parent"
                             android:id="@+id/detail_submit_button"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/button_solid_red"
                             style="@style/SmallButtonText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/button_solid_red"
                             android:gravity="center"
-                            android:text="SUBMIT"
-                            android:layout_margin="8dp"/>
+                            android:text="SUBMIT" />
 
                     </LinearLayout>
 

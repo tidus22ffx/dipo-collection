@@ -10,52 +10,57 @@
 
     <include layout="@layout/toolbar" />
 
-    <LinearLayout
-        android:paddingTop="?attr/actionBarSize"
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize"
+        android:layout_gravity="top"
+        android:background="@color/white">
 
         <LinearLayout
+            android:id="@+id/delivered_search_layout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:paddingTop="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:layout_weight="1">
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/deliveredSwipeRefreshLayout">
 
             <SearchView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/delivered_search"
-                android:layout_gravity="bottom"
-                app:layout_constraintBottom_toTopOf="@id/deliveredSwipeRefreshLayout"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintLeft_toRightOf="parent"
-                android:background="@android:color/white" />
-
+                style="@style/LatoRegularText"
+                android:background="@drawable/search_background"
+                />
         </LinearLayout>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/deliveredSwipeRefreshLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="7" >
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/delivered_search_layout"
+            app:layout_constraintBottom_toBottomOf="parent" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="0dp"
-                android:padding="8dp"
-                android:layout_gravity="top" >
+                android:layout_height="0dp"
+                android:paddingVertical="8dp"
+                android:background="#F8F2F2" >
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/delivered_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingHorizontal="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
@@ -83,5 +88,6 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

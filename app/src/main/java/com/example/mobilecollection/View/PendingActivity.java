@@ -10,6 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -20,6 +21,7 @@ import com.example.mobilecollection.Adapter.PendingRecyclerAdapter;
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
 import com.example.mobilecollection.ViewModel.PendingViewModel;
+import com.example.mobilecollection.utilities.Utilities;
 
 import java.util.ArrayList;
 
@@ -43,8 +45,11 @@ public class PendingActivity extends AppCompatActivity implements PendingRecycle
         TextView textView = findViewById(R.id.toolbar_text);
         searchBar = findViewById(R.id.pending_search);
 
-        textView.setText("Data Pending");
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
+        Drawable backButton = getDrawable(R.drawable.ico_back);
+        Drawable resizedBackButton = Utilities.resizeDrawable(backButton, this, 20, 20);
+
+        textView.setText("DATA PENDING");
+        toolbar.setNavigationIcon(resizedBackButton);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 

@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:paddingTop="?attr/actionBarSize"
             android:layout_gravity="top"
-            android:background="#f0f0f0">
+            android:background="@color/white">
 
         <LinearLayout
             android:id="@+id/search_layout"

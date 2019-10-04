@@ -2,7 +2,6 @@ package com.example.mobilecollection.View;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,11 +12,8 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -25,7 +21,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.mobilecollection.R;
 import com.example.mobilecollection.Repository.Model.TodoItem;
-import com.example.mobilecollection.ViewModel.DeliveredDetailsViewModel;
 import com.example.mobilecollection.ViewModel.PendingDetailsViewModel;
 import com.example.mobilecollection.utilities.Utilities;
 
@@ -98,7 +93,7 @@ public class PendingDetailsActivity extends AppCompatActivity {
         initializeView();
         initializeSpinner();
 
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
+        toolbar.setNavigationIcon(R.drawable.ico_back);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
